@@ -2,8 +2,8 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   width="864"
-  height="550"
-  viewBox="0 0 864 550"
+  height="414"
+  viewBox="0 0 864 414"
   role="img"
   aria-label="Frequently used tech stacks"
 >
@@ -40,133 +40,69 @@
     ]]></style>
   </defs>
 
-  <rect class="bg" x="0" y="0" width="864" height="550" rx="18" />
+  <rect class="bg" x="0" y="0" width="864" height="414" rx="18" />
   <text class="title" x="36" y="32">Frequently Used Tech Stacks</text>
-  <text class="section-title" x="36" y="56">Data Structures & Algorithms</text>
+  <text class="section-title" x="36" y="56">Languages</text>
       <g transform="translate(234, 76)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#4f6bd8" />
-            <text class="tile-text" x="28" y="33.333333333333336" font-size="16" fill="#ffffff">C</text>
+            <rect class="tile" width="56" height="56" rx="14" fill="#3776ab" />
+            <text class="tile-text" x="28" y="32" font-size="12" fill="#ffffff">Python</text>
           </g>
       <g transform="translate(302, 76)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#00599c" />
-            <text class="tile-text" x="28" y="33" font-size="15" fill="#ffffff">C++</text>
-          </g>
-      <g transform="translate(370, 76)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#b7410e" />
-            <text class="tile-text" x="28" y="32.666666666666664" font-size="14" fill="#ffffff">Rust</text>
-          </g>
-  <text class="section-title" x="36" y="150">Web Development</text>
-      <g transform="translate(234, 170)">
             <rect class="tile" width="56" height="56" rx="14" fill="#e34f26" />
             <text class="tile-text" x="28" y="32.666666666666664" font-size="14" fill="#ffffff">HTML</text>
           </g>
-      <g transform="translate(302, 170)">
+      <g transform="translate(370, 76)">
             <rect class="tile" width="56" height="56" rx="14" fill="#1572b6" />
             <text class="tile-text" x="28" y="33" font-size="15" fill="#ffffff">CSS</text>
           </g>
-      <g transform="translate(370, 170)">
+      <g transform="translate(438, 76)">
             <rect class="tile" width="56" height="56" rx="14" fill="#f7df1e" />
             <text class="tile-text" x="28" y="33.333333333333336" font-size="16" fill="#1f2328">JS</text>
           </g>
-      <g transform="translate(438, 170)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#3178c6" />
-            <text class="tile-text" x="28" y="33.333333333333336" font-size="16" fill="#ffffff">TS</text>
+      <g transform="translate(506, 76)">
+            <rect class="tile" width="56" height="56" rx="14" fill="#4f6bd8" />
+            <text class="tile-text" x="28" y="33.333333333333336" font-size="16" fill="#ffffff">C</text>
           </g>
-      <g transform="translate(506, 170)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#00add8" />
-            <text class="tile-text" x="28" y="33.333333333333336" font-size="16" fill="#ffffff">Go</text>
+      <g transform="translate(574, 76)">
+            <rect class="tile" width="56" height="56" rx="14" fill="#00599c" />
+            <text class="tile-text" x="28" y="33" font-size="15" fill="#ffffff">C++</text>
           </g>
-      <g transform="translate(574, 170)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#3776ab" />
-            <text class="tile-text" x="28" y="33.333333333333336" font-size="16" fill="#ffffff">Py</text>
+      <g transform="translate(234, 144)">
+            <rect class="tile" width="56" height="56" rx="14" fill="#5e5086" />
+            <text class="tile-text" x="28" y="32" font-size="12" fill="#ffffff">Haskell</text>
           </g>
+      <g transform="translate(302, 144)">
+            <rect class="tile" width="56" height="56" rx="14" fill="#ea2d2e" />
+            <text class="tile-text" x="28" y="32.666666666666664" font-size="14" fill="#ffffff">Java</text>
+          </g>
+      <g transform="translate(370, 144)">
+            <rect class="tile" width="56" height="56" rx="14" fill="#512bd4" />
+            <text class="tile-text" x="28" y="33.333333333333336" font-size="16" fill="#ffffff">C#</text>
+          </g>
+  <text class="section-title" x="36" y="218">Tools</text>
       <g transform="translate(234, 238)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#336791" />
-            <text class="tile-text" x="28" y="33.333333333333336" font-size="16" fill="#ffffff">PG</text>
-          </g>
-      <g transform="translate(302, 238)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#13aa52" />
-            <text class="tile-text" x="28" y="32.333333333333336" font-size="13" fill="#ffffff">Mongo</text>
-          </g>
-      <g transform="translate(370, 238)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#61dafb" />
-            <text class="tile-text" x="28" y="32.333333333333336" font-size="13" fill="#0b111a">React</text>
-          </g>
-      <g transform="translate(438, 238)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#646cff" />
-            <text class="tile-text" x="28" y="32.666666666666664" font-size="14" fill="#ffffff">Vite</text>
-          </g>
-      <g transform="translate(506, 238)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#111111" />
-            <text class="tile-text" x="28" y="32.666666666666664" font-size="14" fill="#ffffff">Next</text>
-          </g>
-      <g transform="translate(574, 238)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#06b6d4" />
-            <text class="tile-text" x="28" y="33.333333333333336" font-size="16" fill="#ffffff">TW</text>
-          </g>
-      <g transform="translate(234, 306)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#333333" />
-            <text class="tile-text" x="28" y="33.333333333333336" font-size="16" fill="#ffffff">Ex</text>
-          </g>
-      <g transform="translate(302, 306)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#539e43" />
-            <text class="tile-text" x="28" y="32.666666666666664" font-size="14" fill="#ffffff">Node</text>
-          </g>
-      <g transform="translate(370, 306)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#ffca28" />
-            <text class="tile-text" x="28" y="32.666666666666664" font-size="14" fill="#1f2328">Fire</text>
-          </g>
-      <g transform="translate(438, 306)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#d82c20" />
-            <text class="tile-text" x="28" y="32.333333333333336" font-size="13" fill="#ffffff">Redis</text>
-          </g>
-      <g transform="translate(506, 306)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#2496ed" />
-            <text class="tile-text" x="28" y="32" font-size="12" fill="#ffffff">Docker</text>
-          </g>
-      <g transform="translate(574, 306)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#009639" />
-            <text class="tile-text" x="28" y="32.333333333333336" font-size="13" fill="#ffffff">Nginx</text>
-          </g>
-      <g transform="translate(234, 374)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#cb3837" />
-            <text class="tile-text" x="28" y="33" font-size="15" fill="#ffffff">NPM</text>
-          </g>
-      <g transform="translate(302, 374)">
             <rect class="tile" width="56" height="56" rx="14" fill="#f05032" />
             <text class="tile-text" x="28" y="33" font-size="15" fill="#ffffff">Git</text>
           </g>
-      <g transform="translate(370, 374)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#fdd835" />
-            <text class="tile-text" x="28" y="32.333333333333336" font-size="13" fill="#1f2328">Linux</text>
+      <g transform="translate(302, 238)">
+            <rect class="tile" width="56" height="56" rx="14" fill="#1f2328" />
+            <text class="tile-text" x="28" y="32" font-size="12" fill="#ffffff">GitHub</text>
           </g>
-      <g transform="translate(438, 374)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#e10098" />
-            <text class="tile-text" x="28" y="32.333333333333336" font-size="13" fill="#ffffff">Graph</text>
+      <g transform="translate(370, 238)">
+            <rect class="tile" width="56" height="56" rx="14" fill="#c71a36" />
+            <text class="tile-text" x="28" y="32.333333333333336" font-size="13" fill="#ffffff">Maven</text>
           </g>
-      <g transform="translate(506, 374)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#0c344b" />
-            <text class="tile-text" x="28" y="32" font-size="12" fill="#ffffff">Prisma</text>
+      <g transform="translate(438, 238)">
+            <rect class="tile" width="56" height="56" rx="14" fill="#f5792a" />
+            <text class="tile-text" x="28" y="32" font-size="12" fill="#ffffff">Blender</text>
           </g>
-      <g transform="translate(574, 374)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#3ecf8e" />
-            <text class="tile-text" x="28" y="32.666666666666664" font-size="14" fill="#0b111a">Supa</text>
+  <text class="section-title" x="36" y="312">Frameworks &amp; Engines</text>
+      <g transform="translate(234, 332)">
+            <rect class="tile" width="56" height="56" rx="14" fill="#61dafb" />
+            <text class="tile-text" x="28" y="32.333333333333336" font-size="13" fill="#0b111a">React</text>
           </g>
-  <text class="section-title" x="36" y="448">Data Science</text>
-      <g transform="translate(234, 468)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#3776ab" />
-            <text class="tile-text" x="28" y="33.333333333333336" font-size="16" fill="#ffffff">Py</text>
-          </g>
-      <g transform="translate(302, 468)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#4dabcf" />
-            <text class="tile-text" x="28" y="33.333333333333336" font-size="16" fill="#ffffff">NP</text>
-          </g>
-      <g transform="translate(370, 468)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#6f62ff" />
-            <text class="tile-text" x="28" y="33.333333333333336" font-size="16" fill="#ffffff">PD</text>
-          </g>
-      <g transform="translate(438, 468)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#f7931e" />
-            <text class="tile-text" x="28" y="33.333333333333336" font-size="16" fill="#1f2328">SK</text>
+      <g transform="translate(302, 332)">
+            <rect class="tile" width="56" height="56" rx="14" fill="#111111" />
+            <text class="tile-text" x="28" y="32.333333333333336" font-size="13" fill="#ffffff">Unity</text>
           </g>
 </svg>
