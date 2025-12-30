@@ -53,6 +53,22 @@ function escapeXml(value) {
     .replace(/'/g, "&apos;");
 }
 
+function parseViewBox(viewBox) {
+  if (!viewBox) {
+    return null;
+  }
+  const parts = viewBox.trim().split(/[\s,]+/).map(Number);
+  if (parts.length < 4 || parts.some((value) => Number.isNaN(value))) {
+    return null;
+  }
+  return {
+    minX: parts[0],
+    minY: parts[1],
+    width: parts[2],
+    height: parts[3],
+  };
+}
+
 export function generateStacksSvg(weeks, options = {}) {
   const { icons = {} } = options;
   const cell = 12;
@@ -83,14 +99,24 @@ export function generateStacksSvg(weeks, options = {}) {
       const row = Math.floor(index / cols);
       const x = contentX + col * (tileSize + tileGap);
       const y = cursorY + row * (tileSize + tileGap);
-      const iconHref = icons[tile.icon];
+      const iconData = icons[tile.icon];
       const label = escapeXml(tile.label);
       const labelY = y + tileSize - 12;
       const iconX = x + (tileSize - tileDefaults.icon) / 2;
       const iconY = y + 10;
-      const iconMarkup = iconHref
-        ? `<image class="tile-icon" href="${iconHref}" x="${iconX}" y="${iconY}" width="${tileDefaults.icon}" height="${tileDefaults.icon}" />`
-        : `<text class="tile-fallback" x="${x + tileSize / 2}" y="${y + tileSize / 2 + 4}">${label}</text>`;
+      let iconMarkup = `<text class="tile-fallback" x="${x + tileSize / 2}" y="${y + tileSize / 2 + 4}">${label}</text>`;
+      if (iconData?.viewBox && iconData?.body) {
+        const viewBox = parseViewBox(iconData.viewBox);
+        if (viewBox) {
+          const iconBox = tileDefaults.icon;
+          const scale = Math.min(iconBox / viewBox.width, iconBox / viewBox.height);
+          const scaledWidth = viewBox.width * scale;
+          const scaledHeight = viewBox.height * scale;
+          const translateX = iconX + (iconBox - scaledWidth) / 2;
+          const translateY = iconY + (iconBox - scaledHeight) / 2;
+          iconMarkup = `<g class="tile-icon" transform="translate(${translateX} ${translateY}) scale(${scale}) translate(${-viewBox.minX} ${-viewBox.minY})">${iconData.body}</g>`;
+        }
+      }
       tiles.push(
         `<g class="tile-group">
           <rect class="tile" x="${x}" y="${y}" width="${tileSize}" height="${tileSize}" rx="${tileDefaults.radius}" />
@@ -112,6 +138,7 @@ export function generateStacksSvg(weeks, options = {}) {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg
   xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
   width="${width}"
   height="${height}"
   viewBox="0 0 ${width} ${height}"

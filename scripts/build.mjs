@@ -9,8 +9,10 @@ import { generateStacksSvg, stackIconPaths } from "./generateStacksSvg.mjs";
 const outputPath = path.join("dist", "farm.svg");
 const statsPath = path.join("dist", "stats.svg");
 const stacksPath = path.join("dist", "stacks.svg");
-const deviconBase =
-  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/";
+const deviconBases = [
+  "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/",
+  "https://fastly.jsdelivr.net/gh/devicons/devicon@latest/icons/",
+];
 const dragonPath = path.join("assets", "dragon.png");
 
 function getPngSize(buffer) {
@@ -42,30 +44,104 @@ async function readDragonAsset() {
   }
 }
 
-async function fetchDevicon(iconPath) {
-  const response = await fetch(`${deviconBase}${iconPath}`);
-  if (!response.ok) {
-    const text = await response.text();
-    throw new Error(
-      `Devicon fetch failed (${response.status}) for ${iconPath}: ${text}`,
-    );
+function prefixSvgIds(svg, prefix) {
+  const idMap = new Map();
+  let output = svg.replace(/id=["']([^"']+)["']/g, (match, id) => {
+    const safeId = `${prefix}-${id}`;
+    idMap.set(id, safeId);
+    return `id="${safeId}"`;
+  });
+
+  output = output.replace(/url\(#([^)]+)\)/g, (match, id) => {
+    const mapped = idMap.get(id) || `${prefix}-${id}`;
+    return `url(#${mapped})`;
+  });
+  output = output.replace(
+    /xlink:href=["']#([^"']+)["']/g,
+    (match, id) => {
+      const mapped = idMap.get(id) || `${prefix}-${id}`;
+      return `xlink:href="#${mapped}"`;
+    },
+  );
+  output = output.replace(/href=["']#([^"']+)["']/g, (match, id) => {
+    const mapped = idMap.get(id) || `${prefix}-${id}`;
+    return `href="#${mapped}"`;
+  });
+
+  return output;
+}
+
+function extractSvgPayload(svg) {
+  const cleaned = svg
+    .replace(/<\?xml[\s\S]*?\?>/gi, "")
+    .replace(/<!DOCTYPE[\s\S]*?>/gi, "");
+  const match = cleaned.match(/<svg\b([^>]*)>([\s\S]*?)<\/svg>/i);
+  if (!match) {
+    return null;
   }
-  const svg = await response.text();
-  const base64 = Buffer.from(svg).toString("base64");
-  return `data:image/svg+xml;base64,${base64}`;
+  const attrs = match[1];
+  const body = match[2];
+  const viewBoxMatch = attrs.match(/viewBox=["']([^"']+)["']/i);
+  if (!viewBoxMatch) {
+    return null;
+  }
+  return { viewBox: viewBoxMatch[1], body };
+}
+
+async function fetchWithRetry(url, attempts = 3, delayMs = 250) {
+  let lastError;
+  for (let attempt = 1; attempt <= attempts; attempt += 1) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        const text = await response.text();
+        throw new Error(`HTTP ${response.status}: ${text}`);
+      }
+      return response;
+    } catch (error) {
+      lastError = error;
+      if (attempt < attempts) {
+        const backoff = delayMs * attempt;
+        await new Promise((resolve) => setTimeout(resolve, backoff));
+      }
+    }
+  }
+  throw lastError;
+}
+
+async function fetchDevicon(iconPath) {
+  const errors = [];
+  for (const base of deviconBases) {
+    const url = `${base}${iconPath}`;
+    try {
+      const response = await fetchWithRetry(url, 2, 300);
+      const svg = await response.text();
+      const payload = extractSvgPayload(svg);
+      if (!payload) {
+        throw new Error(`Unable to parse SVG payload`);
+      }
+      const prefix = `icon-${iconPath.replace(/[^a-z0-9]+/gi, "-")}`;
+      const prefixedBody = prefixSvgIds(payload.body, prefix);
+      return {
+        viewBox: payload.viewBox,
+        body: prefixedBody,
+      };
+    } catch (error) {
+      errors.push(`${url}: ${error.message}`);
+    }
+  }
+  throw new Error(errors.join(" | "));
 }
 
 async function loadStackIcons() {
   const icons = {};
-  await Promise.all(
-    stackIconPaths.map(async (iconPath) => {
-      try {
-        icons[iconPath] = await fetchDevicon(iconPath);
-      } catch (error) {
-        console.warn(`Skipping icon ${iconPath}: ${error.message}`);
-      }
-    }),
-  );
+  for (const iconPath of stackIconPaths) {
+    try {
+      icons[iconPath] = await fetchDevicon(iconPath);
+    } catch (error) {
+      console.warn(`Skipping icon ${iconPath}: ${error.message}`);
+    }
+  }
   return icons;
 }
 
