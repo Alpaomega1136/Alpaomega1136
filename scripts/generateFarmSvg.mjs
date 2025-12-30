@@ -39,10 +39,11 @@ function levelForCount(count, thresholds) {
 }
 
 export function generateFarmSvg(weeks, options = {}) {
-  const { dragonImage, dragonRatio = 1.5 } = options;
+  const { dragonImage, dragonRatio = 1.5, minWeeks = weeks.length } = options;
   const cell = 12;
   const gap = 3;
-  const gridWidth = weeks.length * (cell + gap) - gap;
+  const totalWeeks = Math.max(weeks.length, minWeeks);
+  const gridWidth = totalWeeks * (cell + gap) - gap;
   const gridHeight = 7 * (cell + gap) - gap;
   const padX = 36;
   const padY = 28;
@@ -55,10 +56,11 @@ export function generateFarmSvg(weeks, options = {}) {
   const nonZero = counts.filter((count) => count > 0);
   const thresholds = buildThresholds(nonZero);
 
+  const emptyWeek = Array.from({ length: 7 }, () => ({ date: null, count: 0 }));
   const cells = [];
   const baseCells = [];
-  for (let weekIndex = 0; weekIndex < weeks.length; weekIndex += 1) {
-    const week = weeks[weekIndex];
+  for (let weekIndex = 0; weekIndex < totalWeeks; weekIndex += 1) {
+    const week = weeks[weekIndex] ?? emptyWeek;
     for (let dayIndex = 0; dayIndex < week.length; dayIndex += 1) {
       const day = week[dayIndex];
       const level = levelForCount(day.count, thresholds);

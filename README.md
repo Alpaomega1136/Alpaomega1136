@@ -7,9 +7,7 @@ Right now i interested and learn in **Software Engineering, Data Science, and Ar
 Sometimes, i also interested about **Game Development and Visual Animation**
 
 ![Tech Stacks](https://raw.githubusercontent.com/Alpaomega1136/Alpaomega1136/main/dist/stacks.svg?v=1)
-
 ![GitHub Stats](https://raw.githubusercontent.com/Alpaomega1136/Alpaomega1136/main/dist/stats.svg)
-
 ![Contribution Farm](https://raw.githubusercontent.com/Alpaomega1136/Alpaomega1136/main/dist/farm.svg)
 
 

@@ -2,9 +2,9 @@ import process from "node:process";
 
 const ENDPOINT = "https://api.github.com/graphql";
 const QUERY = `
-  query {
+  query ($from: DateTime!, $to: DateTime!) {
     viewer {
-      contributionsCollection {
+      contributionsCollection(from: $from, to: $to) {
         contributionCalendar {
           weeks {
             contributionDays {
@@ -24,13 +24,18 @@ export async function fetchContributions() {
     throw new Error("GITHUB_TOKEN is required to fetch contributions.");
   }
 
+  const now = new Date();
+  const year = now.getUTCFullYear();
+  const from = new Date(Date.UTC(year, 0, 1)).toISOString();
+  const to = now.toISOString();
+
   const response = await fetch(ENDPOINT, {
     method: "POST",
     headers: {
       authorization: `bearer ${token}`,
       "content-type": "application/json",
     },
-    body: JSON.stringify({ query: QUERY }),
+    body: JSON.stringify({ query: QUERY, variables: { from, to } }),
   });
 
   if (!response.ok) {
