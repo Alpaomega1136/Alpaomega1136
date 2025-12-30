@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg
   xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
   width="864"
-  height="414"
-  viewBox="0 0 864 414"
+  height="406"
+  viewBox="0 0 864 406"
   role="img"
   aria-label="Frequently used tech stacks"
 >
@@ -12,6 +13,9 @@
       <stop offset="0%" stop-color="#0b1016" />
       <stop offset="100%" stop-color="#0f141b" />
     </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.35" />
+    </filter>
     <style><![CDATA[
       svg {
         font-family: "IBM Plex Sans", "Segoe UI", Arial, sans-serif;
@@ -30,79 +34,326 @@
         font-weight: 600;
       }
       .tile {
-        stroke: rgba(255, 255, 255, 0.08);
+        fill: #161b22;
+        stroke: #21262d;
         stroke-width: 1;
+        filter: url(#shadow);
       }
       .tile-text {
+        fill: #c9d1d9;
+        font-size: 11px;
+        font-weight: 700;
+        text-anchor: middle;
+      }
+      .tile-icon {
+        image-rendering: auto;
+      }
+      .tile-fallback {
+        fill: #c9d1d9;
+        font-size: 12px;
         font-weight: 700;
         text-anchor: middle;
       }
     ]]></style>
   </defs>
 
-  <rect class="bg" x="0" y="0" width="864" height="414" rx="18" />
+  <rect class="bg" x="0" y="0" width="864" height="406" rx="18" />
   <text class="title" x="36" y="32">Frequently Used Tech Stacks</text>
-  <text class="section-title" x="36" y="56">Languages</text>
-      <g transform="translate(234, 76)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#3776ab" />
-            <text class="tile-text" x="28" y="32" font-size="12" fill="#ffffff">Python</text>
-          </g>
-      <g transform="translate(302, 76)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#e34f26" />
-            <text class="tile-text" x="28" y="32.666666666666664" font-size="14" fill="#ffffff">HTML</text>
-          </g>
-      <g transform="translate(370, 76)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#1572b6" />
-            <text class="tile-text" x="28" y="33" font-size="15" fill="#ffffff">CSS</text>
-          </g>
-      <g transform="translate(438, 76)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#f7df1e" />
-            <text class="tile-text" x="28" y="33.333333333333336" font-size="16" fill="#1f2328">JS</text>
-          </g>
-      <g transform="translate(506, 76)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#4f6bd8" />
-            <text class="tile-text" x="28" y="33.333333333333336" font-size="16" fill="#ffffff">C</text>
-          </g>
-      <g transform="translate(574, 76)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#00599c" />
-            <text class="tile-text" x="28" y="33" font-size="15" fill="#ffffff">C++</text>
-          </g>
-      <g transform="translate(234, 144)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#5e5086" />
-            <text class="tile-text" x="28" y="32" font-size="12" fill="#ffffff">Haskell</text>
-          </g>
-      <g transform="translate(302, 144)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#ea2d2e" />
-            <text class="tile-text" x="28" y="32.666666666666664" font-size="14" fill="#ffffff">Java</text>
-          </g>
-      <g transform="translate(370, 144)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#512bd4" />
-            <text class="tile-text" x="28" y="33.333333333333336" font-size="16" fill="#ffffff">C#</text>
-          </g>
-  <text class="section-title" x="36" y="218">Tools</text>
-      <g transform="translate(234, 238)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#f05032" />
-            <text class="tile-text" x="28" y="33" font-size="15" fill="#ffffff">Git</text>
-          </g>
-      <g transform="translate(302, 238)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#1f2328" />
-            <text class="tile-text" x="28" y="32" font-size="12" fill="#ffffff">GitHub</text>
-          </g>
-      <g transform="translate(370, 238)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#c71a36" />
-            <text class="tile-text" x="28" y="32.333333333333336" font-size="13" fill="#ffffff">Maven</text>
-          </g>
-      <g transform="translate(438, 238)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#f5792a" />
-            <text class="tile-text" x="28" y="32" font-size="12" fill="#ffffff">Blender</text>
-          </g>
-  <text class="section-title" x="36" y="312">Frameworks &amp; Engines</text>
-      <g transform="translate(234, 332)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#61dafb" />
-            <text class="tile-text" x="28" y="32.333333333333336" font-size="13" fill="#0b111a">React</text>
-          </g>
-      <g transform="translate(302, 332)">
-            <rect class="tile" width="56" height="56" rx="14" fill="#111111" />
-            <text class="tile-text" x="28" y="32.333333333333336" font-size="13" fill="#ffffff">Unity</text>
-          </g>
+  <text class="section-title" x="36" y="76">Languages</text>
+      <g class="tile-group">
+          <rect class="tile" x="216" y="58" width="68" height="68" rx="14" />
+          <g class="tile-icon" transform="translate(235 68) scale(0.234375) translate(0 0)"><linearGradient id="icon-python-python-original-svg-python-original-a" gradientUnits="userSpaceOnUse" x1="70.252" y1="1237.476" x2="170.659" y2="1151.089" gradientTransform="matrix(.563 0 0 -.568 -29.215 707.817)"><stop offset="0" stop-color="#5A9FD4"/><stop offset="1" stop-color="#306998"/></linearGradient><linearGradient id="icon-python-python-original-svg-python-original-b" gradientUnits="userSpaceOnUse" x1="209.474" y1="1098.811" x2="173.62" y2="1149.537" gradientTransform="matrix(.563 0 0 -.568 -29.215 707.817)"><stop offset="0" stop-color="#FFD43B"/><stop offset="1" stop-color="#FFE873"/></linearGradient><path fill="url(#icon-python-python-original-svg-python-original-a)" d="M63.391 1.988c-4.222.02-8.252.379-11.8 1.007-10.45 1.846-12.346 5.71-12.346 12.837v9.411h24.693v3.137H29.977c-7.176 0-13.46 4.313-15.426 12.521-2.268 9.405-2.368 15.275 0 25.096 1.755 7.311 5.947 12.519 13.124 12.519h8.491V67.234c0-8.151 7.051-15.34 15.426-15.34h24.665c6.866 0 12.346-5.654 12.346-12.548V15.833c0-6.693-5.646-11.72-12.346-12.837-4.244-.706-8.645-1.027-12.866-1.008zM50.037 9.557c2.55 0 4.634 2.117 4.634 4.721 0 2.593-2.083 4.69-4.634 4.69-2.56 0-4.633-2.097-4.633-4.69-.001-2.604 2.073-4.721 4.633-4.721z" transform="translate(0 10.26)"/><path fill="url(#icon-python-python-original-svg-python-original-b)" d="M91.682 28.38v10.966c0 8.5-7.208 15.655-15.426 15.655H51.591c-6.756 0-12.346 5.783-12.346 12.549v23.515c0 6.691 5.818 10.628 12.346 12.547 7.816 2.297 15.312 2.713 24.665 0 6.216-1.801 12.346-5.423 12.346-12.547v-9.412H63.938v-3.138h37.012c7.176 0 9.852-5.005 12.348-12.519 2.578-7.735 2.467-15.174 0-25.096-1.774-7.145-5.161-12.521-12.348-12.521h-9.268zM77.809 87.927c2.561 0 4.634 2.097 4.634 4.692 0 2.602-2.074 4.719-4.634 4.719-2.55 0-4.633-2.117-4.633-4.719 0-2.595 2.083-4.692 4.633-4.692z" transform="translate(0 10.26)"/><radialGradient id="icon-python-python-original-svg-python-original-c" cx="1825.678" cy="444.45" r="26.743" gradientTransform="matrix(0 -.24 -1.055 0 532.979 557.576)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#B8B8B8" stop-opacity=".498"/><stop offset="1" stop-color="#7F7F7F" stop-opacity="0"/></radialGradient><path opacity=".444" fill="url(#icon-python-python-original-svg-python-original-c)" d="M97.309 119.597c0 3.543-14.816 6.416-33.091 6.416-18.276 0-33.092-2.873-33.092-6.416 0-3.544 14.815-6.417 33.092-6.417 18.275 0 33.091 2.872 33.091 6.417z"/></g>
+          <text class="tile-text" x="250" y="114">Python</text>
+        </g>
+      <g class="tile-group">
+          <rect class="tile" x="296" y="58" width="68" height="68" rx="14" />
+          <g class="tile-icon" transform="translate(315 68) scale(0.234375) translate(0 0)"><path fill="#E44D26" d="M19.037 113.876L9.032 1.661h109.936l-10.016 112.198-45.019 12.48z"/><path fill="#F16529" d="M64 116.8l36.378-10.086 8.559-95.878H64z"/><path fill="#EBEBEB" d="M64 52.455H45.788L44.53 38.361H64V24.599H29.489l.33 3.692 3.382 37.927H64zm0 35.743l-.061.017-15.327-4.14-.979-10.975H33.816l1.928 21.609 28.193 7.826.063-.017z"/><path fill="#fff" d="M63.952 52.455v13.763h16.947l-1.597 17.849-15.35 4.143v14.319l28.215-7.82.207-2.325 3.234-36.233.335-3.696h-3.708zm0-27.856v13.762h33.244l.276-3.092.628-6.978.329-3.692z"/></g>
+          <text class="tile-text" x="330" y="114">HTML</text>
+        </g>
+      <g class="tile-group">
+          <rect class="tile" x="376" y="58" width="68" height="68" rx="14" />
+          <g class="tile-icon" transform="translate(395 68) scale(0.234375) translate(0 0)"><path fill="#1572B6" d="M18.814 114.123L8.76 1.352h110.48l-10.064 112.754-45.243 12.543-45.119-12.526z"/><path fill="#33A9DC" d="M64.001 117.062l36.559-10.136 8.601-96.354h-45.16v106.49z"/><path fill="#fff" d="M64.001 51.429h18.302l1.264-14.163H64.001V23.435h34.682l-.332 3.711-3.4 38.114h-30.95V51.429z"/><path fill="#EBEBEB" d="M64.083 87.349l-.061.018-15.403-4.159-.985-11.031H33.752l1.937 21.717 28.331 7.863.063-.018v-14.39z"/><path fill="#fff" d="M81.127 64.675l-1.666 18.522-15.426 4.164v14.39l28.354-7.858.208-2.337 2.406-26.881H81.127z"/><path fill="#EBEBEB" d="M64.048 23.435v13.831H30.64l-.277-3.108-.63-7.012-.331-3.711h34.646zm-.047 27.996v13.831H48.792l-.277-3.108-.631-7.012-.33-3.711h16.447z"/></g>
+          <text class="tile-text" x="410" y="114">CSS</text>
+        </g>
+      <g class="tile-group">
+          <rect class="tile" x="456" y="58" width="68" height="68" rx="14" />
+          <g class="tile-icon" transform="translate(475 68) scale(0.234375) translate(0 0)"><path fill="#F0DB4F" d="M1.408 1.408h125.184v125.185H1.408z"/><path fill="#323330" d="M116.347 96.736c-.917-5.711-4.641-10.508-15.672-14.981-3.832-1.761-8.104-3.022-9.377-5.926-.452-1.69-.512-2.642-.226-3.665.821-3.32 4.784-4.355 7.925-3.403 2.023.678 3.938 2.237 5.093 4.724 5.402-3.498 5.391-3.475 9.163-5.879-1.381-2.141-2.118-3.129-3.022-4.045-3.249-3.629-7.676-5.498-14.756-5.355l-3.688.477c-3.534.893-6.902 2.748-8.877 5.235-5.926 6.724-4.236 18.492 2.975 23.335 7.104 5.332 17.54 6.545 18.873 11.531 1.297 6.104-4.486 8.08-10.234 7.378-4.236-.881-6.592-3.034-9.139-6.949-4.688 2.713-4.688 2.713-9.508 5.485 1.143 2.499 2.344 3.63 4.26 5.795 9.068 9.198 31.76 8.746 35.83-5.176.165-.478 1.261-3.666.38-8.581zM69.462 58.943H57.753l-.048 30.272c0 6.438.333 12.34-.714 14.149-1.713 3.558-6.152 3.117-8.175 2.427-2.059-1.012-3.106-2.451-4.319-4.485-.333-.584-.583-1.036-.667-1.071l-9.52 5.83c1.583 3.249 3.915 6.069 6.902 7.901 4.462 2.678 10.459 3.499 16.731 2.059 4.082-1.189 7.604-3.652 9.448-7.401 2.666-4.915 2.094-10.864 2.07-17.444.06-10.735.001-21.468.001-32.237z"/></g>
+          <text class="tile-text" x="490" y="114">JavaScript</text>
+        </g>
+      <g class="tile-group">
+          <rect class="tile" x="536" y="58" width="68" height="68" rx="14" />
+          <g class="tile-icon" transform="translate(555 68) scale(0.234375) translate(0 0)"><path fill="#a9bacd" d="M125 50c-4-32-24-50-62-50C29 0 3 24 3 64c0 39 24 64 64 64 32 0 55-19 58-50H87c-2 11-8 20-20 20-21 0-24-16-24-33 0-23 8-35 22-35 13 0 20 7 22 20z" /></g>
+          <text class="tile-text" x="570" y="114">C</text>
+        </g>
+      <g class="tile-group">
+          <rect class="tile" x="616" y="58" width="68" height="68" rx="14" />
+          <g class="tile-icon" transform="translate(635 68) scale(0.234375) translate(0 0)">
+  <path fill="#00599c" d="M118.766 95.82c.89-1.543 1.441-3.28 1.441-4.843V36.78c0-1.558-.55-3.297-1.441-4.84l-55.32 31.94Zm0 0"/>
+  <path fill="#004482" d="m68.36 126.586 46.933-27.094c1.352-.781 2.582-2.129 3.473-3.672l-55.32-31.94L8.12 95.82c.89 1.543 2.121 2.89 3.473 3.672l46.933 27.094c2.703 1.562 7.13 1.562 9.832 0Zm0 0"/>
+  <path fill="#659ad2" d="M118.766 31.941c-.891-1.546-2.121-2.894-3.473-3.671L68.359 1.172c-2.703-1.563-7.129-1.563-9.832 0L11.594 28.27C8.89 29.828 6.68 33.66 6.68 36.78v54.196c0 1.562.55 3.3 1.441 4.843L63.445 63.88Zm0 0"/>
+  <path fill="#fff" d="M63.445 26.035c-20.867 0-37.843 16.977-37.843 37.844s16.976 37.844 37.843 37.844c13.465 0 26.024-7.247 32.77-18.91L79.84 73.335c-3.38 5.84-9.66 9.465-16.395 9.465-10.433 0-18.922-8.488-18.922-18.922 0-10.434 8.49-18.922 18.922-18.922 6.73 0 13.017 3.629 16.39 9.465l16.38-9.477c-6.75-11.664-19.305-18.91-32.77-18.91zM92.88 57.57v4.207h-4.207v4.203h4.207v4.207h4.203V65.98h4.203v-4.203h-4.203V57.57H92.88zm15.766 0v4.207h-4.204v4.203h4.204v4.207h4.207V65.98h4.203v-4.203h-4.203V57.57h-4.207z"/>
+</g>
+          <text class="tile-text" x="650" y="114">C++</text>
+        </g>
+      <g class="tile-group">
+          <rect class="tile" x="696" y="58" width="68" height="68" rx="14" />
+          <g class="tile-icon" transform="translate(715 68) scale(0.234375) translate(0 0)"><path fill="#463B63" d="M0 110.2L30.1 65 0 19.9h22.6L52.7 65l-30.1 45.1H0z"/><path fill="#5E5187" d="M30.1 110.2L60.2 65 30.1 19.9h22.6l60.2 90.3H90.4L71.5 81.9l-18.8 28.2H30.1z"/><path fill="#904F8C" d="M102.9 83.8l-10-15.1H128v15.1h-25.1zM87.8 61.3l-10-15.1H128v15.1H87.8z"/></g>
+          <text class="tile-text" x="730" y="114">Haskell</text>
+        </g>
+      <g class="tile-group">
+          <rect class="tile" x="216" y="138" width="68" height="68" rx="14" />
+          <g class="tile-icon" transform="translate(235 148) scale(0.234375) translate(0 0)"><path fill="#0074BD" d="M47.617 98.12s-4.767 2.774 3.397 3.71c9.892 1.13 14.947.968 25.845-1.092 0 0 2.871 1.795 6.873 3.351-24.439 10.47-55.308-.607-36.115-5.969zm-2.988-13.665s-5.348 3.959 2.823 4.805c10.567 1.091 18.91 1.18 33.354-1.6 0 0 1.993 2.025 5.132 3.131-29.542 8.64-62.446.68-41.309-6.336z"/><path fill="#EA2D2E" d="M69.802 61.271c6.025 6.935-1.58 13.17-1.58 13.17s15.289-7.891 8.269-17.777c-6.559-9.215-11.587-13.792 15.635-29.58 0 .001-42.731 10.67-22.324 34.187z"/><path fill="#0074BD" d="M102.123 108.229s3.529 2.91-3.888 5.159c-14.102 4.272-58.706 5.56-71.094.171-4.451-1.938 3.899-4.625 6.526-5.192 2.739-.593 4.303-.485 4.303-.485-4.953-3.487-32.013 6.85-13.743 9.815 49.821 8.076 90.817-3.637 77.896-9.468zM49.912 70.294s-22.686 5.389-8.033 7.348c6.188.828 18.518.638 30.011-.326 9.39-.789 18.813-2.474 18.813-2.474s-3.308 1.419-5.704 3.053c-23.042 6.061-67.544 3.238-54.731-2.958 10.832-5.239 19.644-4.643 19.644-4.643zm40.697 22.747c23.421-12.167 12.591-23.86 5.032-22.285-1.848.385-2.677.72-2.677.72s.688-1.079 2-1.543c14.953-5.255 26.451 15.503-4.823 23.725 0-.002.359-.327.468-.617z"/><path fill="#EA2D2E" d="M76.491 1.587S89.459 14.563 64.188 34.51c-20.266 16.006-4.621 25.13-.007 35.559-11.831-10.673-20.509-20.07-14.688-28.815C58.041 28.42 81.722 22.195 76.491 1.587z"/><path fill="#0074BD" d="M52.214 126.021c22.476 1.437 57-.8 57.817-11.436 0 0-1.571 4.032-18.577 7.231-19.186 3.612-42.854 3.191-56.887.874 0 .001 2.875 2.381 17.647 3.331z"/></g>
+          <text class="tile-text" x="250" y="194">Java</text>
+        </g>
+      <g class="tile-group">
+          <rect class="tile" x="296" y="138" width="68" height="68" rx="14" />
+          <g class="tile-icon" transform="translate(315 148) scale(0.234375) translate(0 0)"><path fill="#9B4F96" d="M115.4 30.7L67.1 2.9c-.8-.5-1.9-.7-3.1-.7-1.2 0-2.3.3-3.1.7l-48 27.9c-1.7 1-2.9 3.5-2.9 5.4v55.7c0 1.1.2 2.4 1 3.5l106.8-62c-.6-1.2-1.5-2.1-2.4-2.7z"/><path fill="#68217A" d="M10.7 95.3c.5.8 1.2 1.5 1.9 1.9l48.2 27.9c.8.5 1.9.7 3.1.7 1.2 0 2.3-.3 3.1-.7l48-27.9c1.7-1 2.9-3.5 2.9-5.4V36.1c0-.9-.1-1.9-.6-2.8l-106.6 62z"/><path fill="#fff" d="M85.3 76.1C81.1 83.5 73.1 88.5 64 88.5c-13.5 0-24.5-11-24.5-24.5s11-24.5 24.5-24.5c9.1 0 17.1 5 21.3 12.5l13-7.5c-6.8-11.9-19.6-20-34.3-20-21.8 0-39.5 17.7-39.5 39.5s17.7 39.5 39.5 39.5c14.6 0 27.4-8 34.2-19.8l-12.9-7.6zM97 66.2l.9-4.3h-4.2v-4.7h5.1L100 51h4.9l-1.2 6.1h3.8l1.2-6.1h4.8l-1.2 6.1h2.4v4.7h-3.3l-.9 4.3h4.2v4.7h-5.1l-1.2 6h-4.9l1.2-6h-3.8l-1.2 6h-4.8l1.2-6h-2.4v-4.7H97zm4.8 0h3.8l.9-4.3h-3.8l-.9 4.3z"/></g>
+          <text class="tile-text" x="330" y="194">C#</text>
+        </g>
+  <text class="section-title" x="36" y="242">Tools</text>
+      <g class="tile-group">
+          <rect class="tile" x="216" y="224" width="68" height="68" rx="14" />
+          <g class="tile-icon" transform="translate(235 234) scale(0.234375) translate(0 0)"><path fill="#F34F29" d="M124.737 58.378L69.621 3.264c-3.172-3.174-8.32-3.174-11.497 0L46.68 14.71l14.518 14.518c3.375-1.139 7.243-.375 9.932 2.314 2.703 2.706 3.461 6.607 2.294 9.993l13.992 13.993c3.385-1.167 7.292-.413 9.994 2.295 3.78 3.777 3.78 9.9 0 13.679a9.673 9.673 0 01-13.683 0 9.677 9.677 0 01-2.105-10.521L68.574 47.933l-.002 34.341a9.708 9.708 0 012.559 1.828c3.778 3.777 3.778 9.898 0 13.683-3.779 3.777-9.904 3.777-13.679 0-3.778-3.784-3.778-9.905 0-13.683a9.65 9.65 0 013.167-2.11V47.333a9.581 9.581 0 01-3.167-2.111c-2.862-2.86-3.551-7.06-2.083-10.576L41.056 20.333 3.264 58.123a8.133 8.133 0 000 11.5l55.117 55.114c3.174 3.174 8.32 3.174 11.499 0l54.858-54.858a8.135 8.135 0 00-.001-11.501z"/></g>
+          <text class="tile-text" x="250" y="280">Git</text>
+        </g>
+      <g class="tile-group">
+          <rect class="tile" x="296" y="224" width="68" height="68" rx="14" />
+          <g class="tile-icon" transform="translate(315 234) scale(0.234375) translate(0 0)"><g fill="#181616"><path fill-rule="evenodd" clip-rule="evenodd" d="M64 5.103c-33.347 0-60.388 27.035-60.388 60.388 0 26.682 17.303 49.317 41.297 57.303 3.017.56 4.125-1.31 4.125-2.905 0-1.44-.056-6.197-.082-11.243-16.8 3.653-20.345-7.125-20.345-7.125-2.747-6.98-6.705-8.836-6.705-8.836-5.48-3.748.413-3.67.413-3.67 6.063.425 9.257 6.223 9.257 6.223 5.386 9.23 14.127 6.562 17.573 5.02.542-3.903 2.107-6.568 3.834-8.076-13.413-1.525-27.514-6.704-27.514-29.843 0-6.593 2.36-11.98 6.223-16.21-.628-1.52-2.695-7.662.584-15.98 0 0 5.07-1.623 16.61 6.19C53.7 35 58.867 34.327 64 34.304c5.13.023 10.3.694 15.127 2.033 11.526-7.813 16.59-6.19 16.59-6.19 3.287 8.317 1.22 14.46.593 15.98 3.872 4.23 6.215 9.617 6.215 16.21 0 23.194-14.127 28.3-27.574 29.796 2.167 1.874 4.097 5.55 4.097 11.183 0 8.08-.07 14.583-.07 16.572 0 1.607 1.088 3.49 4.148 2.897 23.98-7.994 41.263-30.622 41.263-57.294C124.388 32.14 97.35 5.104 64 5.104z"/><path d="M26.484 91.806c-.133.3-.605.39-1.035.185-.44-.196-.685-.605-.543-.906.13-.31.603-.395 1.04-.188.44.197.69.61.537.91zm2.446 2.729c-.287.267-.85.143-1.232-.28-.396-.42-.47-.983-.177-1.254.298-.266.844-.14 1.24.28.394.426.472.984.17 1.255zM31.312 98.012c-.37.258-.976.017-1.35-.52-.37-.538-.37-1.183.01-1.44.373-.258.97-.025 1.35.507.368.545.368 1.19-.01 1.452zm3.261 3.361c-.33.365-1.036.267-1.552-.23-.527-.487-.674-1.18-.343-1.544.336-.366 1.045-.264 1.564.23.527.486.686 1.18.333 1.543zm4.5 1.951c-.147.473-.825.688-1.51.486-.683-.207-1.13-.76-.99-1.238.14-.477.823-.7 1.512-.485.683.206 1.13.756.988 1.237zm4.943.361c.017.498-.563.91-1.28.92-.723.017-1.308-.387-1.315-.877 0-.503.568-.91 1.29-.924.717-.013 1.306.387 1.306.88zm4.598-.782c.086.485-.413.984-1.126 1.117-.7.13-1.35-.172-1.44-.653-.086-.498.422-.997 1.122-1.126.714-.123 1.354.17 1.444.663zm0 0"/></g></g>
+          <text class="tile-text" x="330" y="280">GitHub</text>
+        </g>
+      <g class="tile-group">
+          <rect class="tile" x="376" y="224" width="68" height="68" rx="14" />
+          <g class="tile-icon" transform="translate(395 234) scale(0.234375) translate(0 0)">
+  <defs>
+    <linearGradient id="icon-maven-maven-original-svg-i" gradientUnits="userSpaceOnUse" x1="-7274.8" y1="2082.507" x2="-7243.872" y2="2046.343" gradientTransform="matrix(-.092 -.464 -.464 .092 318.72 -3557.936)">
+      <stop offset="0" style="stop-color:#f69923;stop-opacity:1"/>
+      <stop offset=".312" style="stop-color:#f79a23;stop-opacity:1"/>
+      <stop offset=".838" style="stop-color:#e97826;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="icon-maven-maven-original-svg-n" gradientUnits="userSpaceOnUse" x1="-7503.689" y1="2086.595" x2="-7283.036" y2="2086.595" gradientTransform="matrix(-.092 -.464 -.464 .092 318.72 -3557.936)">
+      <stop offset=".323" style="stop-color:#9e2064;stop-opacity:1"/>
+      <stop offset=".63" style="stop-color:#c92037;stop-opacity:1"/>
+      <stop offset=".751" style="stop-color:#cd2335;stop-opacity:1"/>
+      <stop offset="1" style="stop-color:#e97826;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="icon-maven-maven-original-svg-o" gradientUnits="userSpaceOnUse" x1="-7477.053" y1="2064.42" x2="-7345.566" y2="2064.42" gradientTransform="matrix(-.092 -.464 -.464 .092 318.72 -3557.936)">
+      <stop offset="0" style="stop-color:#282662;stop-opacity:1"/>
+      <stop offset=".095" style="stop-color:#662e8d;stop-opacity:1"/>
+      <stop offset=".788" style="stop-color:#9f2064;stop-opacity:1"/>
+      <stop offset=".949" style="stop-color:#cd2032;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="icon-maven-maven-original-svg-p" gradientUnits="userSpaceOnUse" x1="-7491.296" y1="2088.633" x2="-7270.643" y2="2088.633" gradientTransform="matrix(-.092 -.464 -.464 .092 318.72 -3557.936)">
+      <stop offset=".323" style="stop-color:#9e2064;stop-opacity:1"/>
+      <stop offset=".63" style="stop-color:#c92037;stop-opacity:1"/>
+      <stop offset=".751" style="stop-color:#cd2335;stop-opacity:1"/>
+      <stop offset="1" style="stop-color:#e97826;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="icon-maven-maven-original-svg-q" gradientUnits="userSpaceOnUse" x1="-7475.203" y1="2085.61" x2="-7359.244" y2="2085.61" gradientTransform="matrix(-.092 -.464 -.464 .092 318.72 -3557.936)">
+      <stop offset="0" style="stop-color:#282662;stop-opacity:1"/>
+      <stop offset=".095" style="stop-color:#662e8d;stop-opacity:1"/>
+      <stop offset=".788" style="stop-color:#9f2064;stop-opacity:1"/>
+      <stop offset=".949" style="stop-color:#cd2032;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="icon-maven-maven-original-svg-r" gradientUnits="userSpaceOnUse" x1="-7491.296" y1="2065.799" x2="-7270.643" y2="2065.799" gradientTransform="matrix(-.092 -.464 -.464 .092 318.72 -3557.936)">
+      <stop offset=".323" style="stop-color:#9e2064;stop-opacity:1"/>
+      <stop offset=".63" style="stop-color:#c92037;stop-opacity:1"/>
+      <stop offset=".751" style="stop-color:#cd2335;stop-opacity:1"/>
+      <stop offset="1" style="stop-color:#e97826;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="icon-maven-maven-original-svg-s" gradientUnits="userSpaceOnUse" x1="-7504.984" y1="2066.905" x2="-7284.331" y2="2066.905" gradientTransform="matrix(-.092 -.464 -.464 .092 318.72 -3557.936)">
+      <stop offset=".323" style="stop-color:#9e2064;stop-opacity:1"/>
+      <stop offset=".63" style="stop-color:#c92037;stop-opacity:1"/>
+      <stop offset=".751" style="stop-color:#cd2335;stop-opacity:1"/>
+      <stop offset="1" style="stop-color:#e97826;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="icon-maven-maven-original-svg-v" gradientUnits="userSpaceOnUse" x1="-7491.296" y1="2058.959" x2="-7270.643" y2="2058.959" gradientTransform="matrix(-.092 -.464 -.464 .092 318.72 -3557.936)">
+      <stop offset=".323" style="stop-color:#9e2064;stop-opacity:1"/>
+      <stop offset=".63" style="stop-color:#c92037;stop-opacity:1"/>
+      <stop offset=".751" style="stop-color:#cd2335;stop-opacity:1"/>
+      <stop offset="1" style="stop-color:#e97826;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="icon-maven-maven-original-svg-y" gradientUnits="userSpaceOnUse" x1="-7491.296" y1="2059.762" x2="-7270.643" y2="2059.762" gradientTransform="matrix(-.092 -.464 -.464 .092 318.72 -3557.936)">
+      <stop offset=".323" style="stop-color:#9e2064;stop-opacity:1"/>
+      <stop offset=".63" style="stop-color:#c92037;stop-opacity:1"/>
+      <stop offset=".751" style="stop-color:#cd2335;stop-opacity:1"/>
+      <stop offset="1" style="stop-color:#e97826;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="icon-maven-maven-original-svg-z" gradientUnits="userSpaceOnUse" x1="-8307.632" y1="2040.008" x2="-8276.704" y2="2003.844" gradientTransform="matrix(.296 -.448 -.448 -.296 3456.332 -3102.04)">
+      <stop offset="0" style="stop-color:#f69923;stop-opacity:1"/>
+      <stop offset=".312" style="stop-color:#f79a23;stop-opacity:1"/>
+      <stop offset=".838" style="stop-color:#e97826;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="icon-maven-maven-original-svg-E" gradientUnits="userSpaceOnUse" x1="-8536.521" y1="2044.096" x2="-8315.868" y2="2044.096" gradientTransform="matrix(.296 -.448 -.448 -.296 3456.332 -3102.04)">
+      <stop offset=".323" style="stop-color:#9e2064;stop-opacity:1"/>
+      <stop offset=".63" style="stop-color:#c92037;stop-opacity:1"/>
+      <stop offset=".751" style="stop-color:#cd2335;stop-opacity:1"/>
+      <stop offset="1" style="stop-color:#e97826;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="icon-maven-maven-original-svg-F" gradientUnits="userSpaceOnUse" x1="-8509.885" y1="2021.921" x2="-8378.397" y2="2021.921" gradientTransform="matrix(.296 -.448 -.448 -.296 3456.332 -3102.04)">
+      <stop offset="0" style="stop-color:#282662;stop-opacity:1"/>
+      <stop offset=".095" style="stop-color:#662e8d;stop-opacity:1"/>
+      <stop offset=".788" style="stop-color:#9f2064;stop-opacity:1"/>
+      <stop offset=".949" style="stop-color:#cd2032;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="icon-maven-maven-original-svg-G" gradientUnits="userSpaceOnUse" x1="-8524.128" y1="2046.134" x2="-8303.475" y2="2046.134" gradientTransform="matrix(.296 -.448 -.448 -.296 3456.332 -3102.04)">
+      <stop offset=".323" style="stop-color:#9e2064;stop-opacity:1"/>
+      <stop offset=".63" style="stop-color:#c92037;stop-opacity:1"/>
+      <stop offset=".751" style="stop-color:#cd2335;stop-opacity:1"/>
+      <stop offset="1" style="stop-color:#e97826;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="icon-maven-maven-original-svg-H" gradientUnits="userSpaceOnUse" x1="-8508.035" y1="2043.111" x2="-8392.076" y2="2043.111" gradientTransform="matrix(.296 -.448 -.448 -.296 3456.332 -3102.04)">
+      <stop offset="0" style="stop-color:#282662;stop-opacity:1"/>
+      <stop offset=".095" style="stop-color:#662e8d;stop-opacity:1"/>
+      <stop offset=".788" style="stop-color:#9f2064;stop-opacity:1"/>
+      <stop offset=".949" style="stop-color:#cd2032;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="icon-maven-maven-original-svg-I" gradientUnits="userSpaceOnUse" x1="-8524.128" y1="2023.3" x2="-8303.475" y2="2023.3" gradientTransform="matrix(.296 -.448 -.448 -.296 3456.332 -3102.04)">
+      <stop offset=".323" style="stop-color:#9e2064;stop-opacity:1"/>
+      <stop offset=".63" style="stop-color:#c92037;stop-opacity:1"/>
+      <stop offset=".751" style="stop-color:#cd2335;stop-opacity:1"/>
+      <stop offset="1" style="stop-color:#e97826;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="icon-maven-maven-original-svg-J" gradientUnits="userSpaceOnUse" x1="-8537.816" y1="2024.407" x2="-8317.163" y2="2024.407" gradientTransform="matrix(.296 -.448 -.448 -.296 3456.332 -3102.04)">
+      <stop offset=".323" style="stop-color:#9e2064;stop-opacity:1"/>
+      <stop offset=".63" style="stop-color:#c92037;stop-opacity:1"/>
+      <stop offset=".751" style="stop-color:#cd2335;stop-opacity:1"/>
+      <stop offset="1" style="stop-color:#e97826;stop-opacity:1"/>
+    </linearGradient>
+    <linearGradient id="icon-maven-maven-original-svg-M" gradientUnits="userSpaceOnUse" x1="-8524.128" y1="2016.46" x2="-8303.475" y2="2016.46" gradientTransform="matrix(.296 -.448 -.448 -.296 3456.332 -3102.04)">
+      <stop offset=".323" style="stop-color:#9e2064;stop-opacity:1"/>
+      <stop offset=".63" style="stop-color:#c92037;stop-opacity:1"/>
+      <stop offset=".751" style="stop-color:#cd2335;stop-opacity:1"/>
+      <stop offset="1" style="stop-color:#e97826;stop-opacity:1"/>
+    </linearGradient>
+    <clipPath id="icon-maven-maven-original-svg-b">
+      <path d="M0 0h128v128H0z"/>
+    </clipPath>
+    <clipPath id="icon-maven-maven-original-svg-c">
+      <path d="M0 0h128v128H0z"/>
+    </clipPath>
+    <clipPath id="icon-maven-maven-original-svg-d">
+      <path d="M0 0h128v128H0z"/>
+    </clipPath>
+    <clipPath id="icon-maven-maven-original-svg-e">
+      <path d="M0 0h128v128H0z"/>
+    </clipPath>
+    <clipPath id="icon-maven-maven-original-svg-f">
+      <path d="M0 0h128v128H0z"/>
+    </clipPath>
+    <clipPath id="icon-maven-maven-original-svg-g">
+      <path d="M0 0h128v128H0z"/>
+    </clipPath>
+    <clipPath id="icon-maven-maven-original-svg-h">
+      <path d="M0 0h128v128H0z"/>
+    </clipPath>
+    <mask id="icon-maven-maven-original-svg-k">
+      <g filter="url(#icon-maven-maven-original-svg-a)">
+        <path style="fill:#000;fill-opacity:.34902;stroke:none" d="M0 0h128v128H0z"/>
+      </g>
+    </mask>
+    <mask id="icon-maven-maven-original-svg-m">
+      <g filter="url(#icon-maven-maven-original-svg-a)">
+        <path style="fill:#000;fill-opacity:.34902;stroke:none" d="M0 0h128v128H0z"/>
+      </g>
+    </mask>
+    <mask id="icon-maven-maven-original-svg-u">
+      <g filter="url(#icon-maven-maven-original-svg-a)">
+        <path style="fill:#000;fill-opacity:.34902;stroke:none" d="M0 0h128v128H0z"/>
+      </g>
+    </mask>
+    <mask id="icon-maven-maven-original-svg-x">
+      <g filter="url(#icon-maven-maven-original-svg-a)">
+        <path style="fill:#000;fill-opacity:.34902;stroke:none" d="M0 0h128v128H0z"/>
+      </g>
+    </mask>
+    <mask id="icon-maven-maven-original-svg-B">
+      <g filter="url(#icon-maven-maven-original-svg-a)">
+        <path style="fill:#000;fill-opacity:.34902;stroke:none" d="M0 0h128v128H0z"/>
+      </g>
+    </mask>
+    <mask id="icon-maven-maven-original-svg-D">
+      <g filter="url(#icon-maven-maven-original-svg-a)">
+        <path style="fill:#000;fill-opacity:.34902;stroke:none" d="M0 0h128v128H0z"/>
+      </g>
+    </mask>
+    <mask id="icon-maven-maven-original-svg-L">
+      <g filter="url(#icon-maven-maven-original-svg-a)">
+        <path style="fill:#000;fill-opacity:.34902;stroke:none" d="M0 0h128v128H0z"/>
+      </g>
+    </mask>
+    <g id="icon-maven-maven-original-svg-j" clip-path="url(#icon-maven-maven-original-svg-b)">
+      <path style="stroke:none;fill-rule:nonzero;fill:#be202e;fill-opacity:1" d="M43.695 53.98c-.265.293-.543.567-.824.844.145-.133.293-.289.43-.433.14-.13.27-.266.394-.41Zm0 0"/>
+    </g>
+    <g id="icon-maven-maven-original-svg-l" clip-path="url(#icon-maven-maven-original-svg-c)">
+      <path style="stroke:none;fill-rule:nonzero;fill:#be202e;fill-opacity:1" d="M41.602 49.426c.046-.04.082-.086.125-.121.18-.18.363-.36.511-.543-.199.218-.425.43-.64.664Zm0 0"/>
+    </g>
+    <g id="icon-maven-maven-original-svg-t" clip-path="url(#icon-maven-maven-original-svg-d)">
+      <path style="stroke:none;fill-rule:nonzero;fill:#be202e;fill-opacity:1" d="M43.309 54.398c-.133.149-.282.278-.43.434a5.68 5.68 0 0 1 .43-.434Zm0 0"/>
+    </g>
+    <g id="icon-maven-maven-original-svg-w" clip-path="url(#icon-maven-maven-original-svg-e)">
+      <path style="stroke:none;fill-rule:nonzero;fill:#be202e;fill-opacity:1" d="M41.602 49.438c.046-.04.082-.086.14-.133-.047.035-.082.082-.14.133Zm0 0"/>
+    </g>
+    <g id="icon-maven-maven-original-svg-A" clip-path="url(#icon-maven-maven-original-svg-f)">
+      <path style="stroke:none;fill-rule:nonzero;fill:#be202e;fill-opacity:1" d="M79.602 62.586c-.45.023-.895.023-1.336.023h.687c.215.004.43-.004.649-.023Zm0 0"/>
+    </g>
+    <g id="icon-maven-maven-original-svg-C" clip-path="url(#icon-maven-maven-original-svg-g)">
+      <path style="stroke:none;fill-rule:nonzero;fill:#be202e;fill-opacity:1" d="M81.535 57.258h.2c.288 0 .578 0 .85-.035-.339 0-.69 0-1.046.023Zm0 0"/>
+    </g>
+    <g id="icon-maven-maven-original-svg-K" clip-path="url(#icon-maven-maven-original-svg-h)">
+      <path style="stroke:none;fill-rule:nonzero;fill:#be202e;fill-opacity:1" d="M78.953 62.621h-.687a6.56 6.56 0 0 1 .687 0Zm0 0"/>
+    </g>
+    <filter id="icon-maven-maven-original-svg-a" filterUnits="objectBoundingBox" x="0%" y="0%" width="100%" height="100%">
+      <feColorMatrix in="SourceGraphic" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"/>
+    </filter>
+  </defs>
+  <path style="stroke:none;fill-rule:nonzero;fill:url(#icon-maven-maven-original-svg-i)" d="M23.902 10.133a38.039 38.039 0 0 0-1.597 10.62l5.707 2.763a72.4 72.4 0 0 1 .398-10.164c.024-.23.047-.368.047-.368 0 .125-.035.243-.047.368a64.129 64.129 0 0 0-.012 10.027 110.54 110.54 0 0 0 8.457-8 12.174 12.174 0 0 0-6.37-6.805s-5.055-2.039-6.583 1.559Zm0 0"/>
+  <path style="stroke:none;fill-rule:nonzero;fill:#be202e;fill-opacity:1" d="M43.695 53.98c-.265.293-.543.567-.824.844.145-.133.293-.289.43-.433.14-.13.27-.266.394-.41Zm0 0"/>
+  <use xlink:href="#icon-maven-maven-original-svg-icon-maven-maven-original-svg-j" mask="url(#icon-maven-maven-original-svg-k)"/>
+  <path style="stroke:none;fill-rule:nonzero;fill:#be202e;fill-opacity:1" d="M41.602 49.426c.046-.04.082-.086.125-.121.18-.18.363-.36.511-.543-.199.218-.425.43-.64.664Zm0 0"/>
+  <use xlink:href="#icon-maven-maven-original-svg-icon-maven-maven-original-svg-l" mask="url(#icon-maven-maven-original-svg-m)"/>
+  <path style="stroke:none;fill-rule:nonzero;fill:url(#icon-maven-maven-original-svg-n)" d="M29.52 40.367a231.874 231.874 0 0 1-.72-5.597 112.17 112.17 0 0 1-.523-5.633c0-.114-.02-.227 0-.325a89.502 89.502 0 0 1-.277-5.3l-5.7-2.746c0 .343-.038.699-.054 1.074-.055 1.363-.098 2.8-.11 4.34 0 1.718 0 3.511.032 5.386.039 1.73.113 3.532.203 5.364.094 1.566.195 3.148.324 4.765v.184l7.625 3.86c-.254-1.801-.53-3.594-.8-5.372Zm0 0"/>
+  <path style="stroke:none;fill-rule:nonzero;fill:url(#icon-maven-maven-original-svg-o)" d="M40.8 85.45c.4 1.421.848 2.89 1.313 4.378v.059c.063.218.114.422.196.629.304 1.004.593 1.894 1.226 3.937A7.694 7.694 0 0 1 47.91 95.5a6.244 6.244 0 0 0-4.164-2.266 13.38 13.38 0 0 0 7.309-11.906 15.897 15.897 0 0 0-.188-1.305 5.387 5.387 0 0 1-3.062 4.61 15.057 15.057 0 0 0 2.437-9.492 29.88 29.88 0 0 0-.297-2.477 12.23 12.23 0 0 1-7.09 9.848l-2.312 2.129c.086.265.156.53.258.808Zm0 0"/>
+  <path style="stroke:none;fill-rule:nonzero;fill:url(#icon-maven-maven-original-svg-p)" d="M37.813 78.941c-.485-1.808-.97-3.644-1.461-5.496A361.37 361.37 0 0 1 35 68.06c-.445-1.817-.871-3.645-1.297-5.47-.422-1.827-.84-3.737-1.23-5.6-.395-1.864-.762-3.723-1.13-5.575-.132-.672-.25-1.324-.37-2-.211-1.14-.403-2.293-.61-3.45a.618.618 0 0 0-.039-.187l-7.582-3.87c.02.12.028.241.031.366.153 1.715.297 3.457.504 5.2.203 1.738.422 3.558.688 5.363.223 1.52.465 3.027.715 4.55.05.301.113.618.164.915a109.705 109.705 0 0 0 2.555 10.828c.328 1.101.652 2.168.984 3.176.289.847.601 1.699.902 2.539a73.593 73.593 0 0 0 2.399 5.754l7.66 3.879c-.399-1.41-.801-2.84-1.2-4.293-.113-.418-.214-.825-.331-1.243Zm0 0"/>
+  <path style="stroke:none;fill-rule:nonzero;fill:url(#icon-maven-maven-original-svg-q)" d="M31.79 80.832a59.387 59.387 0 0 0 3.523 6.508c.042.062.085.152.132.215a15.505 15.505 0 0 0-5.84-.45 21.445 21.445 0 0 1 9.41 5.485 9.865 9.865 0 0 1-4.449 2.23 9.838 9.838 0 0 0 4.883-.433 12.014 12.014 0 0 0-2.969 5.789 12.343 12.343 0 0 1 4.82-5.106c2.302 7.625 5.067 15.89 8.138 24.563.476-.617.609-1.43.359-2.164-.567-1.559-4.219-11.871-8.383-25.871-.117-.403-.223-.801-.355-1.203-.036-.114-.063-.215-.098-.336a749.886 749.886 0 0 1-1.305-4.528c-.097-.36-.199-.695-.297-1.058l-7.66-3.88c.024.083.051.16.09.239Zm0 0"/>
+  <path style="stroke:none;fill-rule:nonzero;fill:url(#icon-maven-maven-original-svg-r)" d="M31.223 45.902c.047.258.093.485.136.746.149.758.282 1.528.438 2.301.16.844.336 1.703.504 2.586.082.445.168.89.261 1.344.278 1.36.579 2.754.887 4.187.399 1.766.797 3.579 1.242 5.465.403 1.785.871 3.645 1.344 5.535.461 1.805.926 3.653 1.438 5.567.449 1.691.93 3.43 1.418 5.199 0 .082.058.176.074.262a632.38 632.38 0 0 0 1.543 5.41.305.305 0 0 0 .035.117l2.312-2.129c-.058 0-.101.051-.18.082a22.18 22.18 0 0 0 5.634-12.453 29.749 29.749 0 0 0-.075-6.95 47.27 47.27 0 0 0-1.109-5.944 78.476 78.476 0 0 0-1.7-5.825 11.615 11.615 0 0 1-1.765 2.551l-.398.438c-.133.148-.282.277-.43.433a13.5 13.5 0 0 0 1.664-10.027 12.698 12.698 0 0 1-2.289 3.965c-.152.183-.332.363-.512.543-.047.035-.082.082-.144.133a13.94 13.94 0 0 0 1.484-3.258c.07-.223.13-.45.172-.68.082-.348.137-.7.188-1.05.02-.235.058-.45.078-.684a9.725 9.725 0 0 0 0-1.653c0-.183 0-.347-.043-.52-.047-.257-.078-.495-.125-.73a41.03 41.03 0 0 0-.598-2.8c-.102-.399-.2-.766-.305-1.098-.047-.133-.07-.262-.117-.403-.125-.363-.226-.699-.336-.976a10.217 10.217 0 0 0-.422-.969 2.14 2.14 0 0 1-.168.457 15.014 15.014 0 0 1-2.597 3.739l2.129-1.95-2.145 1.938a.08.08 0 0 0-.035.05 4.49 4.49 0 0 0-.313.348c0-.027.04-.05.043-.074l-7.28 6.66c.058.05.066.09.062.117Zm0 0"/>
+  <path style="stroke:none;fill-rule:nonzero;fill:url(#icon-maven-maven-original-svg-s)" d="M28.398 23.379c.09 1.601.23 3.394.403 5.379.004.101.015.207.035.308.164 1.735.375 3.602.648 5.637.23 1.758.489 3.602.801 5.602.258 1.73.578 3.543.906 5.468l7.282-6.668a11.974 11.974 0 0 0 1.828-6.59c0-.57-.043-1.171-.09-1.788A56.41 56.41 0 0 0 39.578 25a49.186 49.186 0 0 0-1.082-5.148 28.214 28.214 0 0 0-.836-2.614 32.462 32.462 0 0 0-.8-1.812 115.46 115.46 0 0 1-8.462 7.953Zm0 0"/>
+  <path style="stroke:none;fill-rule:nonzero;fill:#be202e;fill-opacity:1" d="M43.309 54.398c-.133.149-.282.278-.43.434a5.68 5.68 0 0 1 .43-.434Zm0 0"/>
+  <use xlink:href="#icon-maven-maven-original-svg-icon-maven-maven-original-svg-t" mask="url(#icon-maven-maven-original-svg-u)"/>
+  <path style="stroke:none;fill-rule:nonzero;fill:url(#icon-maven-maven-original-svg-v)" d="M43.309 54.398c-.133.149-.282.278-.43.434a5.68 5.68 0 0 1 .43-.434Zm0 0"/>
+  <path style="stroke:none;fill-rule:nonzero;fill:#be202e;fill-opacity:1" d="M41.602 49.438c.046-.04.082-.086.14-.133-.047.035-.082.082-.14.133Zm0 0"/>
+  <use xlink:href="#icon-maven-maven-original-svg-icon-maven-maven-original-svg-w" mask="url(#icon-maven-maven-original-svg-x)"/>
+  <path style="stroke:none;fill-rule:nonzero;fill:url(#icon-maven-maven-original-svg-y)" d="M41.602 49.438c.046-.04.082-.086.14-.133-.047.035-.082.082-.14.133Zm0 0"/>
+  <path style="stroke:none;fill-rule:nonzero;fill:url(#icon-maven-maven-original-svg-z)" d="M98.508 11.563a43.16 43.16 0 0 0-9.707 7.289l2.398 6.761a80.326 80.326 0 0 1 8.403-7.86c.203-.167.328-.265.328-.265-.106.098-.227.168-.328.266a71.75 71.75 0 0 0-8 8.05c4.375.325 8.765.423 13.152.29a13.78 13.78 0 0 0 .281-10.559s-2.445-5.656-6.527-3.973Zm0 0"/>
+  <path style="stroke:none;fill-rule:nonzero;fill:#be202e;fill-opacity:1" d="M79.602 62.586c-.45.023-.895.023-1.336.023h.687c.215.004.43-.004.649-.023Zm0 0"/>
+  <use xlink:href="#icon-maven-maven-original-svg-icon-maven-maven-original-svg-A" mask="url(#icon-maven-maven-original-svg-B)"/>
+  <path style="stroke:none;fill-rule:nonzero;fill:#be202e;fill-opacity:1" d="M81.535 57.258h.2c.288 0 .578 0 .85-.035-.339 0-.69 0-1.046.023Zm0 0"/>
+  <use xlink:href="#icon-maven-maven-original-svg-icon-maven-maven-original-svg-C" mask="url(#icon-maven-maven-original-svg-D)"/>
+  <path style="stroke:none;fill-rule:nonzero;fill:url(#icon-maven-maven-original-svg-E)" d="M79.004 40.363a318.718 318.718 0 0 1 3.871-5.086 138.623 138.623 0 0 1 4.055-4.949c.078-.101.164-.195.238-.277a135.156 135.156 0 0 1 4-4.465l-2.398-6.742c-.286.27-.59.535-.899.82a136.81 136.81 0 0 0-3.535 3.402 222.161 222.161 0 0 0-4.258 4.368 220.475 220.475 0 0 0-4.09 4.472 260.517 260.517 0 0 0-3.527 4.098l-.137.156 3.067 9.164c1.222-1.652 2.418-3.324 3.613-4.96Zm0 0"/>
+  <path style="stroke:none;fill-rule:nonzero;fill:url(#icon-maven-maven-original-svg-F)" d="M52.254 85.602c-.8 1.476-1.602 3-2.422 4.566 0 .02-.027.039-.031.059-.121.23-.242.433-.34.66-.555 1.05-1.023 2-2.137 4.144a8.72 8.72 0 0 1 2.692 4.32 7.08 7.08 0 0 0-1.551-5.128c6.23 1.203 11.89.402 15.344-3.778.3-.379.597-.777.882-1.203a6.088 6.088 0 0 1-6.129 1.274 17.043 17.043 0 0 0 9.504-5.715 35.594 35.594 0 0 0 1.727-2.235 13.818 13.818 0 0 1-13.531 2.297l-3.555-.125c-.152.305-.309.575-.453.864Zm0 0"/>
+  <path style="stroke:none;fill-rule:nonzero;fill:url(#icon-maven-maven-original-svg-G)" d="M55.031 78c1.047-1.844 2.117-3.703 3.2-5.602a296.203 296.203 0 0 1 3.203-5.406c1.097-1.808 2.195-3.625 3.3-5.437a282.35 282.35 0 0 1 3.47-5.5c1.175-1.825 2.347-3.598 3.515-5.383a86.9 86.9 0 0 1 1.3-1.914c.739-1.09 1.497-2.18 2.254-3.262.032-.059.082-.121.114-.184l-3.028-9.136a2.994 2.994 0 0 1-.265.316c-1.242 1.504-2.504 3.024-3.739 4.598-1.23 1.57-2.488 3.2-3.707 4.867a265.274 265.274 0 0 0-3.039 4.23c-.199.282-.402.586-.593.868-1.2 1.797-2.364 3.558-3.387 5.25a113.286 113.286 0 0 0-3.156 5.5 134.34 134.34 0 0 0-1.735 3.34c-.441.91-.867 1.843-1.289 2.757a85.328 85.328 0 0 0-2.644 6.535l3.082 9.2c.8-1.461 1.625-2.914 2.445-4.403.219-.394.469-.8.7-1.234Zm0 0"/>
+  <path style="stroke:none;fill-rule:nonzero;fill:url(#icon-maven-maven-original-svg-H)" d="M48.68 74.742a67.607 67.607 0 0 0-2.332 8.043c0 .086-.051.192-.063.278a17.542 17.542 0 0 0-4.344-5.004 24.348 24.348 0 0 1 3.22 11.894 11.167 11.167 0 0 1-5.356-1.742 11.088 11.088 0 0 0 4.27 3.531 13.604 13.604 0 0 0-6.985 2.301 13.928 13.928 0 0 1 7.933-.273c-4.222 7.957-8.543 16.808-12.964 26.23a2.598 2.598 0 0 0 2-1.457c.8-1.703 6.043-12.902 13.812-27.488.219-.399.453-.82.672-1.254l.184-.348c.824-1.52 1.671-3.082 2.55-4.68.207-.37.399-.722.602-1.09v-.019l-3.082-9.2c-.047.09-.086.184-.117.278Zm0 0"/>
+  <path style="stroke:none;fill-rule:nonzero;fill:url(#icon-maven-maven-original-svg-I)" d="M75.977 46.176c-.168.238-.313.465-.48.703-.485.73-.99 1.453-1.477 2.2a208.44 208.44 0 0 1-1.653 2.483c-.281.426-.566.848-.855 1.293-.86 1.317-1.723 2.676-2.617 4.075a347.967 347.967 0 0 0-3.34 5.383 502.867 502.867 0 0 0-3.317 5.523c-1.062 1.816-2.152 3.676-3.261 5.602-.985 1.718-1.977 3.5-3 5.324-.055.078-.094.183-.149.265a529.846 529.846 0 0 0-3.058 5.602.298.298 0 0 0-.067.125l3.555.121c-.063-.031-.13-.04-.215-.074a25.118 25.118 0 0 0 14.43-5.559 33.84 33.84 0 0 0 5.472-5.64 55.376 55.376 0 0 0 3.825-5.668 86.801 86.801 0 0 0 3.257-6.043c-1.113.37-2.27.59-3.441.648l-.676.035h-.687a15.28 15.28 0 0 0 9.304-6.75 14.342 14.342 0 0 1-4.992 1.375c-.27.028-.558.028-.847.031h-.22a15.9 15.9 0 0 0 3.778-1.437c.234-.121.465-.254.684-.402.343-.215.664-.453.984-.696.207-.168.402-.32.606-.488.472-.41.906-.855 1.304-1.34.137-.156.266-.293.375-.457.168-.238.332-.457.477-.683a40.85 40.85 0 0 0 1.758-2.735c.234-.398.445-.777.629-1.129.066-.144.148-.265.218-.398.192-.403.375-.746.508-1.059.16-.36.305-.73.426-1.11a2.336 2.336 0 0 1-.5.235 16.92 16.92 0 0 1-5.059.946l3.266.125-3.266-.125c-.023-.012-.047-.012-.066 0a5.675 5.675 0 0 0-.516 0c.028 0 .07 0 .094-.032l-11.16-.402c.02.074-.008.113-.031.133Zm0 0"/>
+  <path style="stroke:none;fill-rule:nonzero;fill:url(#icon-maven-maven-original-svg-J)" d="M91.602 25.809a161.424 161.424 0 0 0-3.946 4.656c-.082.086-.156.18-.219.277a178.511 178.511 0 0 0-3.957 5.055c-1.199 1.598-2.48 3.297-3.816 5.16-1.168 1.598-2.348 3.316-3.602 5.121l11.16.402a13.554 13.554 0 0 0 6.712-3.847 45.42 45.42 0 0 0 1.351-1.508A66.175 66.175 0 0 0 99.313 36a56.266 56.266 0 0 0 3.199-5.004 29.64 29.64 0 0 0 1.402-2.766c.309-.73.566-1.421.8-2.097-4.374.113-8.75.004-13.112-.324Zm0 0"/>
+  <path style="stroke:none;fill-rule:nonzero;fill:#be202e;fill-opacity:1" d="M78.953 62.621h-.687a6.56 6.56 0 0 1 .687 0Zm0 0"/>
+  <use xlink:href="#icon-maven-maven-original-svg-icon-maven-maven-original-svg-K" mask="url(#icon-maven-maven-original-svg-L)"/>
+  <path style="stroke:none;fill-rule:nonzero;fill:url(#icon-maven-maven-original-svg-M)" d="M78.953 62.621h-.687a6.56 6.56 0 0 1 .687 0Zm0 0"/>
+</g>
+          <text class="tile-text" x="410" y="280">Maven</text>
+        </g>
+      <g class="tile-group">
+          <rect class="tile" x="456" y="224" width="68" height="68" rx="14" />
+          <g class="tile-icon" transform="translate(475 234) scale(0.234375) translate(0 0)"><path d="M66.332 70.032c.24-4.242 2.327-7.987 5.485-10.634 3.094-2.602 7.248-4.193 11.809-4.193 4.537 0 8.69 1.59 11.78 4.193 3.163 2.647 5.237 6.392 5.485 10.634.24 4.35-1.523 8.41-4.605 11.417-3.158 3.05-7.627 4.977-12.66 4.977-5.037 0-9.526-1.915-12.664-4.977-3.094-3.006-4.853-7.044-4.606-11.397zm0 0" fill="#235785"/><path d="M39.245 79.002c.028 1.66.564 4.89 1.36 7.404 1.682 5.336 4.537 10.273 8.49 14.599 4.062 4.465 9.074 8.055 14.85 10.61 6.073 2.67 12.665 4.037 19.505 4.037 6.84-.009 13.432-1.4 19.504-4.102 5.776-2.582 10.79-6.168 14.85-10.657 3.974-4.374 6.82-9.307 8.491-14.647a37 37 0 001.595-8.163c.208-2.69.12-5.405-.263-8.12a37.535 37.535 0 00-5.417-14.714c-2.574-4.15-5.916-7.76-9.89-10.813l.012-.004-39.955-30.506c-.036-.028-.068-.056-.104-.08-2.619-2.002-7.044-1.994-9.91.008-2.914 2.031-3.25 5.385-.656 7.496l-.012.008 16.682 13.484-50.789.051h-.068c-4.197.004-8.239 2.739-9.03 6.213-.82 3.521 2.035 6.46 6.412 6.46l-.008.016 25.736-.048L4.58 82.524c-.056.044-.12.088-.176.132C.069 85.95-1.33 91.446 1.4 94.9c2.778 3.522 8.666 3.546 13.047.02L39.505 74.51s-.368 2.758-.336 4.397zm64.56 9.219c-5.168 5.228-12.416 8.21-20.227 8.21-7.831.012-15.079-2.918-20.248-8.142-2.526-2.559-4.377-5.473-5.528-8.591a22.202 22.202 0 01-1.271-9.602 22.446 22.446 0 012.778-9.039c1.507-2.714 3.59-5.18 6.14-7.267 5.033-4.058 11.42-6.28 18.1-6.28 6.709-.008 13.097 2.174 18.13 6.236 2.55 2.075 4.625 4.529 6.14 7.243a22.302 22.302 0 012.774 9.043 22.313 22.313 0 01-1.271 9.598c-1.147 3.142-3.002 6.056-5.533 8.615zm0 0" fill="#e87500"/></g>
+          <text class="tile-text" x="490" y="280">Blender</text>
+        </g>
+  <text class="section-title" x="36" y="328">Frameworks &amp; Engines</text>
+      <g class="tile-group">
+          <rect class="tile" x="216" y="310" width="68" height="68" rx="14" />
+          <g class="tile-icon" transform="translate(235 320) scale(0.234375) translate(0 0)"><g fill="#61DAFB"><circle cx="64" cy="64" r="11.4"/><path d="M107.3 45.2c-2.2-.8-4.5-1.6-6.9-2.3.6-2.4 1.1-4.8 1.5-7.1 2.1-13.2-.2-22.5-6.6-26.1-1.9-1.1-4-1.6-6.4-1.6-7 0-15.9 5.2-24.9 13.9-9-8.7-17.9-13.9-24.9-13.9-2.4 0-4.5.5-6.4 1.6-6.4 3.7-8.7 13-6.6 26.1.4 2.3.9 4.7 1.5 7.1-2.4.7-4.7 1.4-6.9 2.3C8.2 50 1.4 56.6 1.4 64s6.9 14 19.3 18.8c2.2.8 4.5 1.6 6.9 2.3-.6 2.4-1.1 4.8-1.5 7.1-2.1 13.2.2 22.5 6.6 26.1 1.9 1.1 4 1.6 6.4 1.6 7.1 0 16-5.2 24.9-13.9 9 8.7 17.9 13.9 24.9 13.9 2.4 0 4.5-.5 6.4-1.6 6.4-3.7 8.7-13 6.6-26.1-.4-2.3-.9-4.7-1.5-7.1 2.4-.7 4.7-1.4 6.9-2.3 12.5-4.8 19.3-11.4 19.3-18.8s-6.8-14-19.3-18.8zM92.5 14.7c4.1 2.4 5.5 9.8 3.8 20.3-.3 2.1-.8 4.3-1.4 6.6-5.2-1.2-10.7-2-16.5-2.5-3.4-4.8-6.9-9.1-10.4-13 7.4-7.3 14.9-12.3 21-12.3 1.3 0 2.5.3 3.5.9zM81.3 74c-1.8 3.2-3.9 6.4-6.1 9.6-3.7.3-7.4.4-11.2.4-3.9 0-7.6-.1-11.2-.4-2.2-3.2-4.2-6.4-6-9.6-1.9-3.3-3.7-6.7-5.3-10 1.6-3.3 3.4-6.7 5.3-10 1.8-3.2 3.9-6.4 6.1-9.6 3.7-.3 7.4-.4 11.2-.4 3.9 0 7.6.1 11.2.4 2.2 3.2 4.2 6.4 6 9.6 1.9 3.3 3.7 6.7 5.3 10-1.7 3.3-3.4 6.6-5.3 10zm8.3-3.3c1.5 3.5 2.7 6.9 3.8 10.3-3.4.8-7 1.4-10.8 1.9 1.2-1.9 2.5-3.9 3.6-6 1.2-2.1 2.3-4.2 3.4-6.2zM64 97.8c-2.4-2.6-4.7-5.4-6.9-8.3 2.3.1 4.6.2 6.9.2 2.3 0 4.6-.1 6.9-.2-2.2 2.9-4.5 5.7-6.9 8.3zm-18.6-15c-3.8-.5-7.4-1.1-10.8-1.9 1.1-3.3 2.3-6.8 3.8-10.3 1.1 2 2.2 4.1 3.4 6.1 1.2 2.2 2.4 4.1 3.6 6.1zm-7-25.5c-1.5-3.5-2.7-6.9-3.8-10.3 3.4-.8 7-1.4 10.8-1.9-1.2 1.9-2.5 3.9-3.6 6-1.2 2.1-2.3 4.2-3.4 6.2zM64 30.2c2.4 2.6 4.7 5.4 6.9 8.3-2.3-.1-4.6-.2-6.9-.2-2.3 0-4.6.1-6.9.2 2.2-2.9 4.5-5.7 6.9-8.3zm22.2 21l-3.6-6c3.8.5 7.4 1.1 10.8 1.9-1.1 3.3-2.3 6.8-3.8 10.3-1.1-2.1-2.2-4.2-3.4-6.2zM31.7 35c-1.7-10.5-.3-17.9 3.8-20.3 1-.6 2.2-.9 3.5-.9 6 0 13.5 4.9 21 12.3-3.5 3.8-7 8.2-10.4 13-5.8.5-11.3 1.4-16.5 2.5-.6-2.3-1-4.5-1.4-6.6zM7 64c0-4.7 5.7-9.7 15.7-13.4 2-.8 4.2-1.5 6.4-2.1 1.6 5 3.6 10.3 6 15.6-2.4 5.3-4.5 10.5-6 15.5C15.3 75.6 7 69.6 7 64zm28.5 49.3c-4.1-2.4-5.5-9.8-3.8-20.3.3-2.1.8-4.3 1.4-6.6 5.2 1.2 10.7 2 16.5 2.5 3.4 4.8 6.9 9.1 10.4 13-7.4 7.3-14.9 12.3-21 12.3-1.3 0-2.5-.3-3.5-.9zM96.3 93c1.7 10.5.3 17.9-3.8 20.3-1 .6-2.2.9-3.5.9-6 0-13.5-4.9-21-12.3 3.5-3.8 7-8.2 10.4-13 5.8-.5 11.3-1.4 16.5-2.5.6 2.3 1 4.5 1.4 6.6zm9-15.6c-2 .8-4.2 1.5-6.4 2.1-1.6-5-3.6-10.3-6-15.6 2.4-5.3 4.5-10.5 6-15.5 13.8 4 22.1 10 22.1 15.6 0 4.7-5.8 9.7-15.7 13.4z"/></g></g>
+          <text class="tile-text" x="250" y="366">React</text>
+        </g>
+      <g class="tile-group">
+          <rect class="tile" x="296" y="310" width="68" height="68" rx="14" />
+          <g class="tile-icon" transform="translate(315 320) scale(0.234375) translate(0 0)"><path d="m63.991 128 51.702-29.855-19.817-11.461-20.26 11.704a1.151 1.151 0 0 1-1.125-.009 1.145 1.145 0 0 1-.568-.975V69.608c0-.819.424-1.56 1.133-1.968L99.13 53.737a1.119 1.119 0 0 1 1.124.009c.352.195.572.564.576.966V78.11l19.83 11.454V29.855L63.99 62.566Zm0 0"/><path fill="#4d4d4d" d="m52.397 98.401-20.27-11.718-19.832 11.46L63.991 128V62.566L7.34 29.854V89.56l19.825-11.45V54.714c.009-.401.225-.77.572-.966a1.13 1.13 0 0 1 1.13-.009L52.953 67.64a2.275 2.275 0 0 1 1.133 1.97v27.8a1.156 1.156 0 0 1-.565.98 1.131 1.131 0 0 1-1.124.012"/><path fill="gray" d="M68.959 0v22.9L89.22 34.597c.348.203.555.576.555.984 0 .403-.212.772-.555.975L65.137 50.468a2.302 2.302 0 0 1-2.27 0L38.791 36.556a1.122 1.122 0 0 1-.56-.975 1.127 1.127 0 0 1 .56-.984L59.048 22.9V0L7.339 29.855l56.652 32.711 56.665-32.71Zm0 0"/></g>
+          <text class="tile-text" x="330" y="366">Unity</text>
+        </g>
 </svg>
