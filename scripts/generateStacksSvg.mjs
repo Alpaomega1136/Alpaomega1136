@@ -1,49 +1,48 @@
 const tileDefaults = {
-  size: 56,
+  size: 68,
   gap: 12,
   radius: 14,
+  icon: 30,
+  labelWidth: 180,
+  sectionGap: 18,
 };
 
-const sections = [
+const stacksSections = [
   {
     title: "Languages",
     tiles: [
-      { label: "Python", bg: "#3776ab", fg: "#ffffff" },
-      { label: "HTML", bg: "#e34f26", fg: "#ffffff" },
-      { label: "CSS", bg: "#1572b6", fg: "#ffffff" },
-      { label: "JS", bg: "#f7df1e", fg: "#1f2328" },
-      { label: "C", bg: "#4f6bd8", fg: "#ffffff" },
-      { label: "C++", bg: "#00599c", fg: "#ffffff" },
-      { label: "Haskell", bg: "#5e5086", fg: "#ffffff" },
-      { label: "Java", bg: "#ea2d2e", fg: "#ffffff" },
-      { label: "C#", bg: "#512bd4", fg: "#ffffff" },
+      { label: "Python", icon: "python/python-original.svg" },
+      { label: "HTML", icon: "html5/html5-original.svg" },
+      { label: "CSS", icon: "css3/css3-original.svg" },
+      { label: "JavaScript", icon: "javascript/javascript-original.svg" },
+      { label: "C", icon: "c/c-original.svg" },
+      { label: "C++", icon: "cplusplus/cplusplus-original.svg" },
+      { label: "Haskell", icon: "haskell/haskell-original.svg" },
+      { label: "Java", icon: "java/java-original.svg" },
+      { label: "C#", icon: "csharp/csharp-original.svg" },
     ],
   },
   {
     title: "Tools",
     tiles: [
-      { label: "Git", bg: "#f05032", fg: "#ffffff" },
-      { label: "GitHub", bg: "#1f2328", fg: "#ffffff" },
-      { label: "Maven", bg: "#c71a36", fg: "#ffffff" },
-      { label: "Blender", bg: "#f5792a", fg: "#ffffff" },
+      { label: "Git", icon: "git/git-original.svg" },
+      { label: "GitHub", icon: "github/github-original.svg" },
+      { label: "Maven", icon: "maven/maven-original.svg" },
+      { label: "Blender", icon: "blender/blender-original.svg" },
     ],
   },
   {
     title: "Frameworks & Engines",
     tiles: [
-      { label: "React", bg: "#61dafb", fg: "#0b111a" },
-      { label: "Unity", bg: "#111111", fg: "#ffffff" },
+      { label: "React", icon: "react/react-original.svg" },
+      { label: "Unity", icon: "unity/unity-original.svg" },
     ],
   },
 ];
 
-function textSize(label) {
-  if (label.length >= 6) return 12;
-  if (label.length === 5) return 13;
-  if (label.length === 4) return 14;
-  if (label.length === 3) return 15;
-  return 16;
-}
+export const stackIconPaths = stacksSections
+  .flatMap((section) => section.tiles.map((tile) => tile.icon))
+  .filter(Boolean);
 
 function escapeXml(value) {
   return String(value)
@@ -54,55 +53,61 @@ function escapeXml(value) {
     .replace(/'/g, "&apos;");
 }
 
-export function generateStacksSvg(weeks) {
+export function generateStacksSvg(weeks, options = {}) {
+  const { icons = {} } = options;
   const cell = 12;
   const gap = 3;
   const padX = 36;
   const gridWidth = weeks.length * (cell + gap) - gap;
   const width = gridWidth + padX * 2;
   const titleY = 32;
-  const sectionGap = 18;
-  const rowGap = tileDefaults.gap;
   const tileSize = tileDefaults.size;
-  const cols = 6;
-  const gridX = padX;
+  const tileGap = tileDefaults.gap;
+  const labelWidth = tileDefaults.labelWidth;
+  const contentX = padX + labelWidth;
+  const contentWidth = width - padX - contentX;
+  const maxCols = Math.max(1, Math.floor((contentWidth + tileGap) / (tileSize + tileGap)));
 
-  let cursorY = 56;
+  let cursorY = 58;
   const sectionBlocks = [];
 
-  for (const section of sections) {
-    const headerY = cursorY;
-    cursorY += 20;
+  for (const section of stacksSections) {
     const tiles = [];
+    const cols = Math.min(maxCols, section.tiles.length);
     const rows = Math.ceil(section.tiles.length / cols);
-    const gridWidthTiles = cols * tileSize + (cols - 1) * tileDefaults.gap;
-    const offsetX = Math.round(gridX + (Math.max(0, width - padX * 2 - gridWidthTiles) / 2));
-    for (let row = 0; row < rows; row += 1) {
-      for (let col = 0; col < cols; col += 1) {
-        const index = row * cols + col;
-        const tile = section.tiles[index];
-        if (!tile) continue;
-        const x = offsetX + col * (tileSize + tileDefaults.gap);
-        const y = cursorY + row * (tileSize + rowGap);
-        const fontSize = textSize(tile.label);
-        const label = escapeXml(tile.label);
-        tiles.push(
-          `<g transform="translate(${x}, ${y})">
-            <rect class="tile" width="${tileSize}" height="${tileSize}" rx="${tileDefaults.radius}" fill="${tile.bg}" />
-            <text class="tile-text" x="${tileSize / 2}" y="${tileSize / 2 + fontSize / 3}" font-size="${fontSize}" fill="${tile.fg}">${label}</text>
-          </g>`,
-        );
-      }
-    }
-    const blockHeight = rows * tileSize + (rows - 1) * rowGap;
+    const tilesHeight = rows * tileSize + (rows - 1) * tileGap;
+    const headerY = cursorY + 18;
+
+    section.tiles.forEach((tile, index) => {
+      const col = index % cols;
+      const row = Math.floor(index / cols);
+      const x = contentX + col * (tileSize + tileGap);
+      const y = cursorY + row * (tileSize + tileGap);
+      const iconHref = icons[tile.icon];
+      const label = escapeXml(tile.label);
+      const labelY = y + tileSize - 12;
+      const iconX = x + (tileSize - tileDefaults.icon) / 2;
+      const iconY = y + 10;
+      const iconMarkup = iconHref
+        ? `<image class="tile-icon" href="${iconHref}" x="${iconX}" y="${iconY}" width="${tileDefaults.icon}" height="${tileDefaults.icon}" />`
+        : `<text class="tile-fallback" x="${x + tileSize / 2}" y="${y + tileSize / 2 + 4}">${label}</text>`;
+      tiles.push(
+        `<g class="tile-group">
+          <rect class="tile" x="${x}" y="${y}" width="${tileSize}" height="${tileSize}" rx="${tileDefaults.radius}" />
+          ${iconMarkup}
+          <text class="tile-text" x="${x + tileSize / 2}" y="${labelY}">${label}</text>
+        </g>`,
+      );
+    });
+
     sectionBlocks.push(
-      `<text class="section-title" x="${gridX}" y="${headerY}">${escapeXml(section.title)}</text>
+      `<text class="section-title" x="${padX}" y="${headerY}">${escapeXml(section.title)}</text>
       ${tiles.join("\n      ")}`,
     );
-    cursorY += blockHeight + sectionGap;
+    cursorY += tilesHeight + tileDefaults.sectionGap;
   }
 
-  const height = cursorY + 8;
+  const height = cursorY + 10;
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg
@@ -118,6 +123,9 @@ export function generateStacksSvg(weeks) {
       <stop offset="0%" stop-color="#0b1016" />
       <stop offset="100%" stop-color="#0f141b" />
     </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.35" />
+    </filter>
     <style><![CDATA[
       svg {
         font-family: "IBM Plex Sans", "Segoe UI", Arial, sans-serif;
@@ -136,10 +144,23 @@ export function generateStacksSvg(weeks) {
         font-weight: 600;
       }
       .tile {
-        stroke: rgba(255, 255, 255, 0.08);
+        fill: #161b22;
+        stroke: #21262d;
         stroke-width: 1;
+        filter: url(#shadow);
       }
       .tile-text {
+        fill: #c9d1d9;
+        font-size: 11px;
+        font-weight: 700;
+        text-anchor: middle;
+      }
+      .tile-icon {
+        image-rendering: auto;
+      }
+      .tile-fallback {
+        fill: #c9d1d9;
+        font-size: 12px;
         font-weight: 700;
         text-anchor: middle;
       }
