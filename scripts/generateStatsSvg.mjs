@@ -81,16 +81,18 @@ function computeStreaks(days) {
   };
 }
 
-export function generateStatsSvg(weeks) {
+export function generateStatsSvg(weeks, options = {}) {
+  const { minWeeks = weeks.length } = options;
   const cell = 12;
   const gap = 3;
   const padX = 36;
   const padY = 20;
-  const gridWidth = weeks.length * (cell + gap) - gap;
+  const totalWeeks = Math.max(weeks.length, minWeeks);
+  const gridWidth = totalWeeks * (cell + gap) - gap;
   const width = gridWidth + padX * 2;
   const height = 128;
 
-  const days = weeks.flat();
+  const days = weeks.flat().filter((day) => day.date);
   const total = days.reduce((sum, day) => sum + day.count, 0);
   const firstDate = days[0]?.date;
   const lastDate = days[days.length - 1]?.date;

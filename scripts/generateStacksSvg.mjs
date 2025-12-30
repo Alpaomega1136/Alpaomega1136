@@ -70,11 +70,12 @@ function parseViewBox(viewBox) {
 }
 
 export function generateStacksSvg(weeks, options = {}) {
-  const { icons = {} } = options;
+  const { icons = {}, minWeeks = weeks.length } = options;
   const cell = 12;
   const gap = 3;
   const padX = 36;
-  const gridWidth = weeks.length * (cell + gap) - gap;
+  const totalWeeks = Math.max(weeks.length, minWeeks);
+  const gridWidth = totalWeeks * (cell + gap) - gap;
   const width = gridWidth + padX * 2;
   const titleY = 32;
   const tileSize = tileDefaults.size;

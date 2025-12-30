@@ -152,9 +152,10 @@ async function build() {
   const svg = generateFarmSvg(weeks, {
     dragonImage: dragonAsset?.dataUri,
     dragonRatio: dragonAsset?.ratio,
+    minWeeks: 53,
   });
-  const statsSvg = generateStatsSvg(weeks);
-  const stacksSvg = generateStacksSvg(weeks, { icons: stackIcons });
+  const statsSvg = generateStatsSvg(weeks, { minWeeks: 53 });
+  const stacksSvg = generateStacksSvg(weeks, { icons: stackIcons, minWeeks: 53 });
 
   await fs.mkdir(path.dirname(outputPath), { recursive: true });
   await fs.writeFile(outputPath, svg, "utf8");
