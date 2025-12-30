@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="864"
+  height="128"
+  viewBox="0 0 864 128"
+  role="img"
+  aria-label="GitHub stats"
+>
+  <defs>
+    <style><![CDATA[
+      svg {
+        font-family: "IBM Plex Sans", "Segoe UI", Arial, sans-serif;
+      }
+      .bg {
+        fill: #0d1117;
+      }
+      .card {
+        fill: #0f141b;
+        stroke: #2b3a52;
+        stroke-width: 1.2;
+      }
+      .title {
+        fill: #c9d1d9;
+        font-size: 16px;
+        font-weight: 600;
+      }
+      .icon-blue {
+        fill: #58a6ff;
+      }
+      .icon-soft {
+        fill: #1f6feb;
+      }
+      .icon-light {
+        fill: #79c0ff;
+      }
+      .stat-number {
+        fill: #58a6ff;
+        font-size: 26px;
+        font-weight: 700;
+      }
+      .stat-label {
+        fill: #79c0ff;
+        font-size: 12px;
+        font-weight: 600;
+      }
+      .stat-sub {
+        fill: #8b949e;
+        font-size: 11px;
+      }
+      .divider {
+        stroke: #273040;
+        stroke-width: 1;
+      }
+    ]]></style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="864" height="128" />
+
+  <g>
+    <rect class="icon-soft" x="14" y="12" width="6" height="18" rx="2" />
+    <rect class="icon-blue" x="22" y="16" width="6" height="14" rx="2" />
+    <rect class="icon-light" x="30" y="13" width="6" height="17" rx="2" />
+    <text class="title" x="40" y="26">GitHub Stats</text>
+  </g>
+
+  <rect class="card" x="14" y="38" width="836" height="76" rx="10" />
+  <line class="divider" x1="292.6666666666667" y1="48" x2="292.6666666666667" y2="104" />
+  <line class="divider" x1="571.3333333333334" y1="48" x2="571.3333333333334" y2="104" />
+
+  <g text-anchor="middle">
+    <text class="stat-number" x="153.33333333333334" y="68">111</text>
+    <text class="stat-label" x="153.33333333333334" y="88">Total Contributions</text>
+    <text class="stat-sub" x="153.33333333333334" y="106">Dec 29, 2024 - Present</text>
+
+    <text class="stat-number" x="432" y="68">7</text>
+    <text class="stat-label" x="432" y="88">Current Streak</text>
+    <text class="stat-sub" x="432" y="106">Dec 24 - Dec 30</text>
+
+    <text class="stat-number" x="710.6666666666667" y="68">7</text>
+    <text class="stat-label" x="710.6666666666667" y="88">Longest Streak</text>
+    <text class="stat-sub" x="710.6666666666667" y="106">Dec 24 - Dec 30</text>
+  </g>
+</svg>

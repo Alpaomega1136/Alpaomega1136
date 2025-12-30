@@ -3,8 +3,12 @@ import path from "node:path";
 
 import { fetchContributions } from "./fetchContrib.mjs";
 import { generateFarmSvg } from "./generateFarmSvg.mjs";
+import { generateStatsSvg } from "./generateStatsSvg.mjs";
+import { generateStacksSvg } from "./generateStacksSvg.mjs";
 
 const outputPath = path.join("dist", "farm.svg");
+const statsPath = path.join("dist", "stats.svg");
+const stacksPath = path.join("dist", "stacks.svg");
 const dragonPath = path.join("assets", "dragon.png");
 
 function getPngSize(buffer) {
@@ -43,10 +47,16 @@ async function build() {
     dragonImage: dragonAsset?.dataUri,
     dragonRatio: dragonAsset?.ratio,
   });
+  const statsSvg = generateStatsSvg(weeks);
+  const stacksSvg = generateStacksSvg(weeks);
 
   await fs.mkdir(path.dirname(outputPath), { recursive: true });
   await fs.writeFile(outputPath, svg, "utf8");
+  await fs.writeFile(statsPath, statsSvg, "utf8");
+  await fs.writeFile(stacksPath, stacksSvg, "utf8");
   console.log(`Wrote ${outputPath}`);
+  console.log(`Wrote ${statsPath}`);
+  console.log(`Wrote ${stacksPath}`);
 }
 
 build().catch((error) => {
