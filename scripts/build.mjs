@@ -56,10 +56,13 @@ function prefixSvgIds(svg, prefix) {
     const mapped = idMap.get(id) || `${prefix}-${id}`;
     return `url(#${mapped})`;
   });
-  output = output.replace(/xlink:href=["']#([^"']+)["']/g, (match, id) => {
-    const mapped = idMap.get(id) || `${prefix}-${id}`;
-    return `xlink:href="#${mapped}"`;
-  });
+  output = output.replace(
+    /xlink:href=["']#([^"']+)["']/g,
+    (match, id) => {
+      const mapped = idMap.get(id) || `${prefix}-${id}`;
+      return `xlink:href="#${mapped}"`;
+    },
+  );
   output = output.replace(/href=["']#([^"']+)["']/g, (match, id) => {
     const mapped = idMap.get(id) || `${prefix}-${id}`;
     return `href="#${mapped}"`;
