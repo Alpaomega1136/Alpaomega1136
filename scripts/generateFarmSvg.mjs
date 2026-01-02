@@ -38,6 +38,22 @@ function levelForCount(count, thresholds) {
   return 4;
 }
 
+function dayOfWeek(dateString) {
+  return new Date(`${dateString}T00:00:00Z`).getUTCDay();
+}
+
+function normalizeWeek(week) {
+  const normalized = Array.from({ length: 7 }, () => ({ date: null, count: 0 }));
+  for (const day of week) {
+    if (!day?.date) {
+      continue;
+    }
+    const index = dayOfWeek(day.date);
+    normalized[index] = day;
+  }
+  return normalized;
+}
+
 export function generateFarmSvg(weeks, options = {}) {
   const { dragonImage, dragonRatio = 1.5, minWeeks = weeks.length } = options;
   const cell = 12;
@@ -60,7 +76,8 @@ export function generateFarmSvg(weeks, options = {}) {
   const cells = [];
   const baseCells = [];
   for (let weekIndex = 0; weekIndex < totalWeeks; weekIndex += 1) {
-    const week = weeks[weekIndex] ?? emptyWeek;
+    const rawWeek = weeks[weekIndex] ?? emptyWeek;
+    const week = normalizeWeek(rawWeek);
     for (let dayIndex = 0; dayIndex < week.length; dayIndex += 1) {
       const day = week[dayIndex];
       const level = levelForCount(day.count, thresholds);
