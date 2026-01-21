@@ -73,9 +73,9 @@
     <text class="stat-label" x="153.33333333333334" y="88">Total Contributions</text>
     <text class="stat-sub" x="153.33333333333334" y="106">Jan 1, 2026 - Present</text>
 
-    <text class="stat-number" x="432" y="68">1</text>
+    <text class="stat-number" x="432" y="68">0</text>
     <text class="stat-label" x="432" y="88">Current Streak</text>
-    <text class="stat-sub" x="432" y="106">Jan 20 - Jan 20</text>
+    <text class="stat-sub" x="432" y="106">No streak</text>
 
     <text class="stat-number" x="710.6666666666667" y="68">14</text>
     <text class="stat-label" x="710.6666666666667" y="88">Longest Streak</text>
