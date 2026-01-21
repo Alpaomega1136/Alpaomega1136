@@ -1,10 +1,10 @@
 ## Hi there 👋
 
-### My name Raymond and i'm 2024 Computer Scienci undergrads in Bandung Institute of Technology (ITB) 
+### My name Raymond, a 2024 Computer Science undergraduate at Bandung Institute of Technology (ITB). 
 
-Right now i interested and learn in **Software Engineering, Data Science, and Artificial Intelligence**
+I am currently interested in and actively learning **Software Engineering**, **Data Science**, and **Artificial Intelligence**.
 
-Sometimes, i also interested about **Game Development and Visual Animation**
+In my free time, I also explore **Game Development** and **Visual Animation**, combining technical skills with creativity.
 
 ![Tech Stacks](https://raw.githubusercontent.com/Alpaomega1136/Alpaomega1136/main/dist/stacks.svg?v=1)
 ![GitHub Stats](https://raw.githubusercontent.com/Alpaomega1136/Alpaomega1136/main/dist/stats.svg)
