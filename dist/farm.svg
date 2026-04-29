@@ -644,7 +644,7 @@
     <rect class="cell l1" x="291" y="28" width="12" height="12" rx="3" ry="3" />
     <rect class="cell l4" x="291" y="43" width="12" height="12" rx="3" ry="3" />
     <rect class="cell l4" x="291" y="58" width="12" height="12" rx="3" ry="3" />
-    <rect class="cell l3" x="291" y="73" width="12" height="12" rx="3" ry="3" />
+    <rect class="cell l4" x="291" y="73" width="12" height="12" rx="3" ry="3" />
     <rect class="cell l0" x="291" y="88" width="12" height="12" rx="3" ry="3" />
     <rect class="cell l0" x="291" y="103" width="12" height="12" rx="3" ry="3" />
     <rect class="cell l0" x="291" y="118" width="12" height="12" rx="3" ry="3" />
@@ -1023,7 +1023,7 @@
     <rect class="cell l1" x="291" y="28" width="12" height="12" rx="3" ry="3" />
     <rect class="cell l4" x="291" y="43" width="12" height="12" rx="3" ry="3" />
     <rect class="cell l4" x="291" y="58" width="12" height="12" rx="3" ry="3" />
-    <rect class="cell l3" x="291" y="73" width="12" height="12" rx="3" ry="3" />
+    <rect class="cell l4" x="291" y="73" width="12" height="12" rx="3" ry="3" />
     <rect class="cell l0" x="291" y="88" width="12" height="12" rx="3" ry="3" />
     <rect class="cell l0" x="291" y="103" width="12" height="12" rx="3" ry="3" />
     <rect class="cell l0" x="291" y="118" width="12" height="12" rx="3" ry="3" />
