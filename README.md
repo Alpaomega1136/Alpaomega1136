@@ -4,8 +4,6 @@ Computer Science undergraduate at Bandung Institute of Technology (ITB), class o
 
 I enjoy turning ideas into practical software, learning how systems work, and exploring the overlap between code, games, and visual animation.
 
-![Dragon banner](assets/dragon-banner.jpg)
-
 ## Focus
 
 - Software engineering and application development
@@ -14,14 +12,8 @@ I enjoy turning ideas into practical software, learning how systems work, and ex
 
 ## Tech Stack
 
-**Languages:** Python, JavaScript, Java, C, C++, C#, Haskell  
-**Frontend:** HTML, CSS, React  
-**Tools & Creative:** Git, GitHub, Maven, Blender, Unity
-
-![Dragon-forged tech stack](dist/dragon-stacks.svg)
+![Programming language icons](https://skillicons.dev/icons?i=python,js,java,c,cpp,cs,haskell,html,css&theme=dark&perline=9)
 
 ## GitHub Activity
 
-![Dragon watch GitHub activity](dist/dragon-activity.svg)
-
-![Contribution Farm](dist/farm.svg)
+![GitHub activity summary](dist/dragon-activity.svg)

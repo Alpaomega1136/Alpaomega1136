@@ -3,9 +3,8 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const stacks = [
-  ["Languages", ["Python", "JavaScript", "Java", "C", "C++", "C#", "Haskell"]],
-  ["Frontend", ["HTML", "CSS", "React"]],
-  ["Creative Tools", ["Git", "GitHub", "Maven", "Blender", "Unity"]],
+  ["Programming Languages", ["Python", "JavaScript", "Java", "C", "C++", "C#", "Haskell"]],
+  ["Web Foundations", ["HTML", "CSS"]],
 ];
 
 function escapeXml(value) {
@@ -102,9 +101,9 @@ export function generateDragonStacksSvg() {
 
   return shell(
     864,
-    272,
-    "Dragon-forged Tech Stack",
-    "Tools I use to build software, data projects, games, and visual experiments.",
+    216,
+    "Technical Skills",
+    "Core languages and foundations I use for software, data, and interactive projects.",
     rows,
   );
 }
@@ -126,8 +125,8 @@ export function generateDragonActivitySvg(stats) {
   return shell(
     864,
     244,
-    "Dragon Watch",
-    "GitHub activity, guarded by the same dragon that burns through the contribution farm.",
+    "GitHub Activity",
+    "A concise view of contribution volume, current streak, and longest streak.",
     cards,
   );
 }

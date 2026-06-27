@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="864" height="272" viewBox="0 0 864 272" role="img" aria-label="Dragon-forged Tech Stack">
+<svg xmlns="http://www.w3.org/2000/svg" width="864" height="216" viewBox="0 0 864 216" role="img" aria-label="Technical Skills">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#07090c"/>
@@ -29,16 +29,16 @@
       .mark { fill: none; stroke: #fb923c; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; opacity: .78; filter: url(#glow); }
     ]]></style>
   </defs>
-  <rect class="bg" width="864" height="272" rx="18"/>
-  <rect width="864" height="272" fill="url(#fire)" rx="18"/>
-  <circle class="ring" cx="746" cy="220" r="92"/>
-  <circle class="ring" cx="746" cy="220" r="122"/>
+  <rect class="bg" width="864" height="216" rx="18"/>
+  <rect width="864" height="216" fill="url(#fire)" rx="18"/>
+  <circle class="ring" cx="746" cy="164" r="92"/>
+  <circle class="ring" cx="746" cy="164" r="122"/>
   <path class="mark" d="M748 43 C708 76 708 118 746 140 C778 159 791 190 758 218 C805 194 818 149 781 119 C751 94 759 63 807 38"/>
   <path class="mark" d="M730 118 C701 114 681 100 670 78 C703 83 727 96 746 119"/>
   <path class="mark" d="M776 118 C805 114 826 100 836 78 C803 83 779 96 760 119"/>
-  <text class="title" x="34" y="43">Dragon-forged Tech Stack</text>
-  <text class="subtitle" x="34" y="66">Tools I use to build software, data projects, games, and visual experiments.</text>
-  <text class="label" x="34" y="104">Languages</text>
+  <text class="title" x="34" y="43">Technical Skills</text>
+  <text class="subtitle" x="34" y="66">Core languages and foundations I use for software, data, and interactive projects.</text>
+  <text class="label" x="34" y="104">Programming Languages</text>
       <rect class="pill" x="190" y="84" width="80" height="32" rx="16"/>
       <text class="text" x="203" y="106">Python</text>
       <rect class="pill" x="280" y="84" width="116" height="32" rx="16"/>
@@ -53,22 +53,9 @@
       <text class="text" x="619" y="106">C#</text>
       <rect class="pill" x="670" y="84" width="89" height="32" rx="16"/>
       <text class="text" x="683" y="106">Haskell</text>
-  <text class="label" x="34" y="160">Frontend</text>
+  <text class="label" x="34" y="160">Web Foundations</text>
       <rect class="pill" x="190" y="140" width="62" height="32" rx="16"/>
       <text class="text" x="203" y="162">HTML</text>
       <rect class="pill" x="262" y="140" width="54" height="32" rx="16"/>
       <text class="text" x="275" y="162">CSS</text>
-      <rect class="pill" x="326" y="140" width="71" height="32" rx="16"/>
-      <text class="text" x="339" y="162">React</text>
-  <text class="label" x="34" y="216">Creative Tools</text>
-      <rect class="pill" x="190" y="196" width="54" height="32" rx="16"/>
-      <text class="text" x="203" y="218">Git</text>
-      <rect class="pill" x="254" y="196" width="80" height="32" rx="16"/>
-      <text class="text" x="267" y="218">GitHub</text>
-      <rect class="pill" x="344" y="196" width="71" height="32" rx="16"/>
-      <text class="text" x="357" y="218">Maven</text>
-      <rect class="pill" x="425" y="196" width="89" height="32" rx="16"/>
-      <text class="text" x="438" y="218">Blender</text>
-      <rect class="pill" x="524" y="196" width="71" height="32" rx="16"/>
-      <text class="text" x="537" y="218">Unity</text>
 </svg>

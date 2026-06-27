@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="864" height="244" viewBox="0 0 864 244" role="img" aria-label="Dragon Watch">
+<svg xmlns="http://www.w3.org/2000/svg" width="864" height="244" viewBox="0 0 864 244" role="img" aria-label="GitHub Activity">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#07090c"/>
@@ -36,8 +36,8 @@
   <path class="mark" d="M748 43 C708 76 708 118 746 140 C778 159 791 190 758 218 C805 194 818 149 781 119 C751 94 759 63 807 38"/>
   <path class="mark" d="M730 118 C701 114 681 100 670 78 C703 83 727 96 746 119"/>
   <path class="mark" d="M776 118 C805 114 826 100 836 78 C803 83 779 96 760 119"/>
-  <text class="title" x="34" y="43">Dragon Watch</text>
-  <text class="subtitle" x="34" y="66">GitHub activity, guarded by the same dragon that burns through the contribution farm.</text>
+  <text class="title" x="34" y="43">GitHub Activity</text>
+  <text class="subtitle" x="34" y="66">A concise view of contribution volume, current streak, and longest streak.</text>
   <rect class="stat" x="34" y="104" width="236" height="104" rx="14"/>
       <text class="number" x="56" y="146">670</text>
       <text class="text" x="56" y="172">Total Contributions</text>
