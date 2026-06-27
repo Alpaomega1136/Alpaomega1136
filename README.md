@@ -8,11 +8,6 @@ I enjoy turning ideas into practical software, learning how systems work, and ex
 
 - Software engineering and application development
 - Data science and artificial intelligence
-- Game development and visual animation
-
-## Tech Stack
-
-![Programming language icons](https://skillicons.dev/icons?i=python,js,java,c,cpp,cs,haskell,html,css&theme=dark&perline=9)
 
 ## GitHub Activity
 
