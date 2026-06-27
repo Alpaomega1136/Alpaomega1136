@@ -4,7 +4,7 @@ Computer Science undergraduate at Bandung Institute of Technology (ITB), class o
 
 I enjoy turning ideas into practical software, learning how systems work, and exploring the overlap between code, games, and visual animation.
 
-![Dragon banner](https://raw.githubusercontent.com/Alpaomega1136/Alpaomega1136/main/assets/dragon-banner.jpg)
+![Dragon banner](assets/dragon-banner.jpg)
 
 ## Focus
 
@@ -18,10 +18,10 @@ I enjoy turning ideas into practical software, learning how systems work, and ex
 **Frontend:** HTML, CSS, React  
 **Tools & Creative:** Git, GitHub, Maven, Blender, Unity
 
-![Dragon-forged tech stack](https://raw.githubusercontent.com/Alpaomega1136/Alpaomega1136/main/dist/dragon-stacks.svg)
+![Dragon-forged tech stack](dist/dragon-stacks.svg)
 
 ## GitHub Activity
 
-![Dragon watch GitHub activity](https://raw.githubusercontent.com/Alpaomega1136/Alpaomega1136/main/dist/dragon-activity.svg)
+![Dragon watch GitHub activity](dist/dragon-activity.svg)
 
-![Contribution Farm](https://raw.githubusercontent.com/Alpaomega1136/Alpaomega1136/main/dist/farm.svg)
+![Contribution Farm](dist/farm.svg)
