@@ -1,13 +1,25 @@
-## Hi there 👋
+# Hi, I'm Raymond
 
-### My name Raymond, a 2024 Computer Science undergraduate at Bandung Institute of Technology (ITB). 
+Computer Science undergraduate at Bandung Institute of Technology (ITB), class of 2024. I am focused on building a strong foundation in software engineering, data science, and artificial intelligence.
 
-I am currently interested in and actively learning **Software Engineering**, **Data Science**, and **Artificial Intelligence**.
+I enjoy turning ideas into practical software, learning how systems work, and exploring the overlap between code, games, and visual animation.
 
-In my free time, I also explore **Game Development** and **Visual Animation**, combining technical skills with creativity.
+## Focus
 
-![Tech Stacks](https://raw.githubusercontent.com/Alpaomega1136/Alpaomega1136/main/dist/stacks.svg?v=1)
-![GitHub Stats](https://raw.githubusercontent.com/Alpaomega1136/Alpaomega1136/main/dist/stats.svg)
+- Software engineering and application development
+- Data science and artificial intelligence
+- Game development and visual animation
+
+## Tech Stack
+
+**Languages:** Python, JavaScript, Java, C, C++, C#, Haskell  
+**Frontend:** HTML, CSS, React  
+**Tools & Creative:** Git, GitHub, Maven, Blender, Unity
+
+![Dragon-forged tech stack](https://raw.githubusercontent.com/Alpaomega1136/Alpaomega1136/main/dist/dragon-stacks.svg)
+
+## GitHub Activity
+
+![Dragon watch GitHub activity](https://raw.githubusercontent.com/Alpaomega1136/Alpaomega1136/main/dist/dragon-activity.svg)
+
 ![Contribution Farm](https://raw.githubusercontent.com/Alpaomega1136/Alpaomega1136/main/dist/farm.svg)
-
-

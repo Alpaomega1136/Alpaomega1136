@@ -3,12 +3,19 @@ import path from "node:path";
 
 import { fetchContributions } from "./fetchContrib.mjs";
 import { generateFarmSvg } from "./generateFarmSvg.mjs";
+import {
+  generateDragonActivitySvg,
+  generateDragonStacksSvg,
+  statTexts,
+} from "./generateDragonCards.mjs";
 import { generateStatsSvg } from "./generateStatsSvg.mjs";
 import { generateStacksSvg, stackIconPaths } from "./generateStacksSvg.mjs";
 
 const outputPath = path.join("dist", "farm.svg");
 const statsPath = path.join("dist", "stats.svg");
 const stacksPath = path.join("dist", "stacks.svg");
+const dragonStacksPath = path.join("dist", "dragon-stacks.svg");
+const dragonActivityPath = path.join("dist", "dragon-activity.svg");
 const deviconBases = [
   "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/",
   "https://fastly.jsdelivr.net/gh/devicons/devicon@latest/icons/",
@@ -156,14 +163,23 @@ async function build() {
   });
   const statsSvg = generateStatsSvg(weeks, { minWeeks: 53 });
   const stacksSvg = generateStacksSvg(weeks, { icons: stackIcons, minWeeks: 53 });
+  const dragonStacksSvg = generateDragonStacksSvg(dragonAsset?.dataUri);
+  const dragonActivitySvg = generateDragonActivitySvg(
+    dragonAsset?.dataUri,
+    statTexts(statsSvg),
+  );
 
   await fs.mkdir(path.dirname(outputPath), { recursive: true });
   await fs.writeFile(outputPath, svg, "utf8");
   await fs.writeFile(statsPath, statsSvg, "utf8");
   await fs.writeFile(stacksPath, stacksSvg, "utf8");
+  await fs.writeFile(dragonStacksPath, dragonStacksSvg, "utf8");
+  await fs.writeFile(dragonActivityPath, dragonActivitySvg, "utf8");
   console.log(`Wrote ${outputPath}`);
   console.log(`Wrote ${statsPath}`);
   console.log(`Wrote ${stacksPath}`);
+  console.log(`Wrote ${dragonStacksPath}`);
+  console.log(`Wrote ${dragonActivityPath}`);
 }
 
 build().catch((error) => {
