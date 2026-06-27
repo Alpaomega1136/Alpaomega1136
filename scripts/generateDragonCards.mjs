@@ -33,11 +33,7 @@ export function statTexts(statsSvg) {
   };
 }
 
-function shell(width, height, title, subtitle, dragonImage, body) {
-  const dragon = dragonImage
-    ? `<image class="dragon" href="${dragonImage}" x="${width - 330}" y="-34" width="342" height="216" preserveAspectRatio="xMidYMid slice"/>`
-    : "";
-
+function shell(width, height, title, subtitle, body) {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-label="${escapeXml(title)}">
   <defs>
@@ -66,14 +62,16 @@ function shell(width, height, title, subtitle, dragonImage, body) {
       .pill { fill: #121820; stroke: #2b3440; stroke-width: 1; }
       .stat { fill: #111827; stroke: #394150; stroke-width: 1; }
       .number { fill: #fb923c; font-size: 28px; font-weight: 850; filter: url(#glow); }
-      .dragon { opacity: .9; }
+      .mark { fill: none; stroke: #fb923c; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; opacity: .78; filter: url(#glow); }
     ]]></style>
   </defs>
   <rect class="bg" width="${width}" height="${height}" rx="18"/>
   <rect width="${width}" height="${height}" fill="url(#fire)" rx="18"/>
   <circle class="ring" cx="${width - 118}" cy="${height - 52}" r="92"/>
   <circle class="ring" cx="${width - 118}" cy="${height - 52}" r="122"/>
-  ${dragon}
+  <path class="mark" d="M748 43 C708 76 708 118 746 140 C778 159 791 190 758 218 C805 194 818 149 781 119 C751 94 759 63 807 38"/>
+  <path class="mark" d="M730 118 C701 114 681 100 670 78 C703 83 727 96 746 119"/>
+  <path class="mark" d="M776 118 C805 114 826 100 836 78 C803 83 779 96 760 119"/>
   <text class="title" x="34" y="43">${escapeXml(title)}</text>
   <text class="subtitle" x="34" y="66">${escapeXml(subtitle)}</text>
   ${body}
@@ -81,7 +79,7 @@ function shell(width, height, title, subtitle, dragonImage, body) {
 `;
 }
 
-export function generateDragonStacksSvg(dragonImage) {
+export function generateDragonStacksSvg() {
   let y = 104;
   const rows = stacks
     .map(([label, items]) => {
@@ -107,12 +105,11 @@ export function generateDragonStacksSvg(dragonImage) {
     272,
     "Dragon-forged Tech Stack",
     "Tools I use to build software, data projects, games, and visual experiments.",
-    dragonImage,
     rows,
   );
 }
 
-export function generateDragonActivitySvg(dragonImage, stats) {
+export function generateDragonActivitySvg(stats) {
   const cards = [
     [34, stats.total, stats.totalLabel, stats.totalRange],
     [314, stats.current, stats.currentLabel, stats.currentRange],
@@ -131,21 +128,18 @@ export function generateDragonActivitySvg(dragonImage, stats) {
     244,
     "Dragon Watch",
     "GitHub activity, guarded by the same dragon that burns through the contribution farm.",
-    dragonImage,
     cards,
   );
 }
 
 async function main() {
   const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-  const dragon = await fs.readFile(path.join(root, "assets", "dragon.png"));
   const statsSvg = await fs.readFile(path.join(root, "dist", "stats.svg"), "utf8");
-  const dragonImage = `data:image/png;base64,${dragon.toString("base64")}`;
   await fs.mkdir(path.join(root, "dist"), { recursive: true });
-  await fs.writeFile(path.join(root, "dist", "dragon-stacks.svg"), generateDragonStacksSvg(dragonImage), "utf8");
+  await fs.writeFile(path.join(root, "dist", "dragon-stacks.svg"), generateDragonStacksSvg(), "utf8");
   await fs.writeFile(
     path.join(root, "dist", "dragon-activity.svg"),
-    generateDragonActivitySvg(dragonImage, statTexts(statsSvg)),
+    generateDragonActivitySvg(statTexts(statsSvg)),
     "utf8",
   );
 }

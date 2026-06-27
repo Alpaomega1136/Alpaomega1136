@@ -163,11 +163,8 @@ async function build() {
   });
   const statsSvg = generateStatsSvg(weeks, { minWeeks: 53 });
   const stacksSvg = generateStacksSvg(weeks, { icons: stackIcons, minWeeks: 53 });
-  const dragonStacksSvg = generateDragonStacksSvg(dragonAsset?.dataUri);
-  const dragonActivitySvg = generateDragonActivitySvg(
-    dragonAsset?.dataUri,
-    statTexts(statsSvg),
-  );
+  const dragonStacksSvg = generateDragonStacksSvg();
+  const dragonActivitySvg = generateDragonActivitySvg(statTexts(statsSvg));
 
   await fs.mkdir(path.dirname(outputPath), { recursive: true });
   await fs.writeFile(outputPath, svg, "utf8");

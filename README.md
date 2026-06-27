@@ -4,6 +4,8 @@ Computer Science undergraduate at Bandung Institute of Technology (ITB), class o
 
 I enjoy turning ideas into practical software, learning how systems work, and exploring the overlap between code, games, and visual animation.
 
+![Dragon banner](https://raw.githubusercontent.com/Alpaomega1136/Alpaomega1136/main/assets/dragon-banner.jpg)
+
 ## Focus
 
 - Software engineering and application development
