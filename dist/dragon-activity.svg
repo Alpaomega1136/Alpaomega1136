@@ -43,9 +43,9 @@
       <text class="text" x="56" y="172">Total Contributions</text>
       <text class="muted" x="56" y="194">Jan 1, 2026 - Present</text>
   <rect class="stat" x="314" y="104" width="236" height="104" rx="14"/>
-      <text class="number" x="336" y="146">2</text>
+      <text class="number" x="336" y="146">0</text>
       <text class="text" x="336" y="172">Current Streak</text>
-      <text class="muted" x="336" y="194">Jul 19 - Jul 20</text>
+      <text class="muted" x="336" y="194">No streak</text>
   <rect class="stat" x="594" y="104" width="236" height="104" rx="14"/>
       <text class="number" x="616" y="146">51</text>
       <text class="text" x="616" y="172">Longest Streak</text>
