@@ -787,7 +787,7 @@
     <rect class="cell l0" x="591" y="73" width="12" height="12" rx="3" ry="3" />
     <rect class="cell l1" x="591" y="88" width="12" height="12" rx="3" ry="3" />
     <rect class="cell l0" x="591" y="103" width="12" height="12" rx="3" ry="3" />
-    <rect class="cell l0" x="591" y="118" width="12" height="12" rx="3" ry="3" />
+    <rect class="cell l1" x="591" y="118" width="12" height="12" rx="3" ry="3" />
     <rect class="cell l0" x="606" y="28" width="12" height="12" rx="3" ry="3" />
     <rect class="cell l0" x="606" y="43" width="12" height="12" rx="3" ry="3" />
     <rect class="cell l0" x="606" y="58" width="12" height="12" rx="3" ry="3" />
@@ -1166,7 +1166,7 @@
     <rect class="cell l0" x="591" y="73" width="12" height="12" rx="3" ry="3" />
     <rect class="cell l1" x="591" y="88" width="12" height="12" rx="3" ry="3" />
     <rect class="cell l0" x="591" y="103" width="12" height="12" rx="3" ry="3" />
-    <rect class="cell l0" x="591" y="118" width="12" height="12" rx="3" ry="3" />
+    <rect class="cell l1" x="591" y="118" width="12" height="12" rx="3" ry="3" />
     <rect class="cell l0" x="606" y="28" width="12" height="12" rx="3" ry="3" />
     <rect class="cell l0" x="606" y="43" width="12" height="12" rx="3" ry="3" />
     <rect class="cell l0" x="606" y="58" width="12" height="12" rx="3" ry="3" />
